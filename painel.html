@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navalha de Ouro | Painel</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body data-restrita="true">
+  <header class="cabecalho">
+    <a class="logo" href="index.html">Navalha de Ouro</a>
+    <nav class="menu" aria-label="Navegação da área do cliente">
+      <a href="painel.html" aria-current="page">Painel</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="meus-dados.html">Meus dados enviados</a>
+      <a href="index.html">Site público</a>
+    </nav>
+    <div class="area-usuario"><span id="usuario-logado" class="usuario-logado"></span><button id="botao-sair" class="botao-link oculto" type="button">Sair</button></div>
+  </header>
+  <div class="barra-acessibilidade" aria-label="Ferramentas de acessibilidade"><span>Acessibilidade:</span><button type="button" data-acao="diminuir-fonte">A-</button><button type="button" data-acao="aumentar-fonte">A+</button><button type="button" data-acao="alternar-tema">Claro/Escuro</button></div>
+
+  <main class="conteudo">
+    <p class="etiqueta">ÁREA RESTRITA</p>
+    <h1>Painel do cliente</h1>
+    <p class="introducao">Esta página só pode ser aberta quando existe uma sessão salva no navegador.</p>
+    <section class="painel-grid">
+      <article class="card"><h2>Enviar feedback</h2><p>Informe serviço de interesse, frequência, nota e preferências.</p><a href="feedback.html">Abrir formulário</a></article>
+      <article class="card"><h2>Ver dados enviados</h2><p>Consulte os dados salvos pelo formulário de feedback.</p><a href="meus-dados.html">Ver confirmação</a></article>
+      <article class="card"><h2>Voltar ao catálogo</h2><p>Continue navegando pelos serviços e produtos.</p><a href="index.html">Ir para o site público</a></article>
+    </section>
+  </main>
+
+  <footer>© 2026 Navalha de Ouro · Projeto acadêmico de ADS</footer>
+  <script src="js/dados.js"></script>
+  <script src="js/comum.js"></script>
+</body>
+</html>

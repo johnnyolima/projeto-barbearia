@@ -3,28 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Navalha de Ouro | Área do cliente</title>
-  <link rel="stylesheet" href="css/login.css">
+  <title>Navalha de Ouro | Login</title>
+  <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
   <header class="cabecalho">
     <a class="logo" href="index.html">Navalha de Ouro</a>
-    <nav class="menu"><a href="index.html">Início</a><a href="servicos.html">Serviços</a><a href="produtos.html">Produtos</a><a class="ativo" href="login.html">Área do cliente</a></nav>
+    <nav class="menu" aria-label="Navegação principal">
+      <a href="index.html">Início</a>
+      <details class="submenu"><summary>Catálogo</summary><div class="submenu-lista"><a href="servicos.html">Serviços</a><a href="produtos.html">Produtos</a></div></details>
+      <a href="cadastro.html">Cadastro</a>
+      <a href="login.html" aria-current="page">Área do cliente</a>
+    </nav>
+    <div class="area-usuario"><span id="usuario-logado" class="usuario-logado"></span><button id="botao-sair" class="botao-link oculto" type="button">Sair</button></div>
   </header>
-  <main class="login-area">
-    <form id="form-login" class="formulario">
+  <div class="barra-acessibilidade" aria-label="Ferramentas de acessibilidade"><span>Acessibilidade:</span><button type="button" data-acao="diminuir-fonte">A-</button><button type="button" data-acao="aumentar-fonte">A+</button><button type="button" data-acao="alternar-tema">Claro/Escuro</button></div>
+
+  <main class="conteudo">
+    <form id="form-login" class="formulario formulario-estreito">
       <p class="etiqueta">ÁREA DO CLIENTE</p>
       <h1>Entrar</h1>
-      <p>Preencha os campos para acessar sua área.</p>
-      <label for="usuario">Usuário ou e-mail</label>
-      <input id="usuario" type="text" placeholder="Digite seu usuário">
-      <label for="senha">Senha</label>
-      <input id="senha" type="password" placeholder="Digite sua senha">
-      <button class="botao" type="submit">Entrar</button>
-      <p id="mensagem-login" class="mensagem"></p>
+      <p class="texto-suave">Use o login e a senha cadastrados neste navegador.</p>
+      <div id="mensagem-login" class="mensagem oculto" role="alert" aria-live="polite"></div>
+      <div class="campo">
+        <label for="login">Login</label>
+        <input id="login" name="login" type="text" maxlength="6" autocomplete="username" required>
+      </div>
+      <div class="campo">
+        <label for="senha">Senha</label>
+        <input id="senha" name="senha" type="password" maxlength="8" autocomplete="current-password" required>
+      </div>
+      <div class="acoes">
+        <button class="botao" type="submit">Entrar</button>
+        <a class="botao-secundario" href="cadastro.html">Cadastrar</a>
+      </div>
     </form>
   </main>
-  <footer>© 2026 Navalha de Ouro · Projeto acadêmico</footer>
+
+  <footer>© 2026 Navalha de Ouro · Projeto acadêmico de ADS</footer>
+  <script src="js/dados.js"></script>
+  <script src="js/comum.js"></script>
   <script src="js/login.js"></script>
 </body>
 </html>

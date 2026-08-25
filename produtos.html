@@ -4,21 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Navalha de Ouro | Produtos</title>
-  <link rel="stylesheet" href="css/produtos.css">
+  <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
   <header class="cabecalho">
     <a class="logo" href="index.html">Navalha de Ouro</a>
-    <nav class="menu"><a href="index.html">Início</a><a href="servicos.html">Serviços</a><a class="ativo" href="produtos.html">Produtos</a><a href="login.html">Área do cliente</a></nav>
+    <nav class="menu" aria-label="Navegação principal">
+      <a href="index.html">Início</a>
+      <details class="submenu">
+        <summary>Catálogo</summary>
+        <div class="submenu-lista"><a href="servicos.html">Serviços</a><a href="produtos.html" aria-current="page">Produtos</a></div>
+      </details>
+      <a href="cadastro.html">Cadastro</a>
+      <a href="login.html">Área do cliente</a>
+    </nav>
+    <div class="area-usuario"><span id="usuario-logado" class="usuario-logado"></span><button id="botao-sair" class="botao-link oculto" type="button">Sair</button></div>
   </header>
+  <div class="barra-acessibilidade" aria-label="Ferramentas de acessibilidade"><span>Acessibilidade:</span><button type="button" data-acao="diminuir-fonte">A-</button><button type="button" data-acao="aumentar-fonte">A+</button><button type="button" data-acao="alternar-tema">Claro/Escuro</button></div>
+
   <main class="conteudo">
-    <p class="etiqueta">PARA CUIDAR EM CASA</p>
+    <p class="etiqueta">CATÁLOGO · PRODUTOS</p>
     <h1>Produtos da barbearia</h1>
-    <p class="introducao">Alguns produtos fictícios para continuar o cuidado depois do atendimento.</p>
-    <section class="produtos" id="lista-produtos"></section>
-    <p class="aviso" id="mensagem-produto"></p>
+    <p class="introducao">Produtos fictícios usados para representar o catálogo solicitado no projeto.</p>
+    <section class="grade-cards" aria-label="Lista de produtos">
+      <article class="card"><h2>Pomada modeladora</h2><p>Modelagem com acabamento natural.</p><p class="preco">R$ 28,00</p></article>
+      <article class="card"><h2>Óleo para barba</h2><p>Ajuda a manter os fios macios.</p><p class="preco">R$ 22,00</p></article>
+      <article class="card"><h2>Shampoo masculino</h2><p>Limpeza suave para cabelo e couro cabeludo.</p><p class="preco">R$ 30,00</p></article>
+      <article class="card"><h2>Balm para barba</h2><p>Finalização leve para alinhar os fios.</p><p class="preco">R$ 24,00</p></article>
+      <article class="card"><h2>Pente de madeira</h2><p>Acessório simples para cuidados diários.</p><p class="preco">R$ 18,00</p></article>
+    </section>
+    <div class="acoes"><a class="botao" href="cadastro.html">Quero receber novidades</a></div>
   </main>
-  <footer>© 2026 Navalha de Ouro · Projeto acadêmico</footer>
-  <script src="js/produtos.js"></script>
+
+  <footer>© 2026 Navalha de Ouro · Projeto acadêmico de ADS</footer>
+  <script src="js/dados.js"></script>
+  <script src="js/comum.js"></script>
 </body>
 </html>

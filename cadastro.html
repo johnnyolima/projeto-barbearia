@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navalha de Ouro | Cadastro</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <header class="cabecalho">
+    <a class="logo" href="index.html">Navalha de Ouro</a>
+    <nav class="menu" aria-label="Navegação principal">
+      <a href="index.html">Início</a>
+      <details class="submenu"><summary>Catálogo</summary><div class="submenu-lista"><a href="servicos.html">Serviços</a><a href="produtos.html">Produtos</a></div></details>
+      <a href="cadastro.html" aria-current="page">Cadastro</a>
+      <a href="login.html">Área do cliente</a>
+    </nav>
+    <div class="area-usuario"><span id="usuario-logado" class="usuario-logado"></span><button id="botao-sair" class="botao-link oculto" type="button">Sair</button></div>
+  </header>
+  <div class="barra-acessibilidade" aria-label="Ferramentas de acessibilidade"><span>Acessibilidade:</span><button type="button" data-acao="diminuir-fonte">A-</button><button type="button" data-acao="aumentar-fonte">A+</button><button type="button" data-acao="alternar-tema">Claro/Escuro</button></div>
+
+  <main class="conteudo">
+    <form id="form-cadastro" class="formulario">
+      <p class="etiqueta">NOVO CLIENTE</p>
+      <h1>Cadastro</h1>
+      <p class="texto-suave">Os dados são salvos somente no <strong>localStorage</strong> deste navegador, conforme o projeto acadêmico.</p>
+
+      <div id="mensagem-cadastro" class="mensagem oculto" role="status" aria-live="polite"></div>
+
+      <div class="grade-formulario">
+        <div class="campo campo-largo">
+          <label for="nome">Nome completo</label>
+          <input id="nome" name="nome" type="text" autocomplete="name" required>
+          <p id="erro-nome" class="erro-campo"></p>
+        </div>
+
+        <div class="campo">
+          <label for="cpf">CPF</label>
+          <input id="cpf" name="cpf" type="text" inputmode="numeric" placeholder="000.000.000-00" maxlength="14" required>
+          <p id="erro-cpf" class="erro-campo"></p>
+        </div>
+
+        <div class="campo">
+          <label for="cep">CEP</label>
+          <input id="cep" name="cep" type="text" inputmode="numeric" placeholder="00000-000" maxlength="9" required>
+          <p id="erro-cep" class="erro-campo"></p>
+        </div>
+
+        <div class="campo campo-largo">
+          <label for="rua">Rua</label>
+          <input id="rua" name="rua" type="text" readonly>
+        </div>
+
+        <div class="campo">
+          <label for="bairro">Bairro</label>
+          <input id="bairro" name="bairro" type="text" readonly>
+        </div>
+
+        <div class="campo">
+          <label for="cidade">Cidade</label>
+          <input id="cidade" name="cidade" type="text" readonly>
+        </div>
+
+        <div class="campo">
+          <label for="uf">UF</label>
+          <input id="uf" name="uf" type="text" readonly>
+        </div>
+
+        <div class="campo">
+          <label for="numero">Número</label>
+          <input id="numero" name="numero" type="text" required>
+        </div>
+
+        <div class="campo campo-largo">
+          <label for="complemento">Complemento <span class="texto-suave">(opcional)</span></label>
+          <input id="complemento" name="complemento" type="text">
+        </div>
+
+        <div class="campo campo-largo">
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+
+        <div class="campo">
+          <label for="telefone">Telefone fixo</label>
+          <input id="telefone" name="telefone" type="text" inputmode="tel" placeholder="(+55)XX-XXXXXXXX" maxlength="18" required>
+          <p id="erro-telefone" class="erro-campo"></p>
+        </div>
+
+        <div class="campo">
+          <label for="celular">Celular</label>
+          <input id="celular" name="celular" type="text" inputmode="tel" placeholder="(+55)XX-XXXXXXXX" maxlength="18" required>
+          <p id="erro-celular" class="erro-campo"></p>
+        </div>
+
+        <div class="campo">
+          <label for="login">Login</label>
+          <input id="login" name="login" type="text" maxlength="6" autocomplete="username" required>
+          <p id="erro-login" class="erro-campo"></p>
+        </div>
+
+        <div class="campo">
+          <label for="senha">Senha</label>
+          <input id="senha" name="senha" type="password" maxlength="8" autocomplete="new-password" required>
+          <p id="erro-senha" class="erro-campo"></p>
+        </div>
+
+        <div class="campo campo-largo">
+          <label for="confirmacao">Confirmar senha</label>
+          <input id="confirmacao" name="confirmacao" type="password" maxlength="8" autocomplete="new-password" required>
+          <p id="erro-confirmacao" class="erro-campo"></p>
+        </div>
+      </div>
+
+      <div class="acoes">
+        <button class="botao" type="submit">Salvar cadastro</button>
+        <a id="ir-login" class="botao-secundario oculto" href="login.html">Ir para o login</a>
+      </div>
+    </form>
+  </main>
+
+  <footer>© 2026 Navalha de Ouro · Projeto acadêmico de ADS</footer>
+  <script src="js/dados.js"></script>
+  <script src="js/comum.js"></script>
+  <script src="js/cadastro.js"></script>
+</body>
+</html>

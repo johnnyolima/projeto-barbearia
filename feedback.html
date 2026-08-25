@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navalha de Ouro | Feedback</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body data-restrita="true">
+  <header class="cabecalho">
+    <a class="logo" href="index.html">Navalha de Ouro</a>
+    <nav class="menu" aria-label="Navegação da área do cliente">
+      <a href="painel.html">Painel</a>
+      <a href="feedback.html" aria-current="page">Feedback</a>
+      <a href="meus-dados.html">Meus dados enviados</a>
+      <a href="index.html">Site público</a>
+    </nav>
+    <div class="area-usuario"><span id="usuario-logado" class="usuario-logado"></span><button id="botao-sair" class="botao-link oculto" type="button">Sair</button></div>
+  </header>
+  <div class="barra-acessibilidade" aria-label="Ferramentas de acessibilidade"><span>Acessibilidade:</span><button type="button" data-acao="diminuir-fonte">A-</button><button type="button" data-acao="aumentar-fonte">A+</button><button type="button" data-acao="alternar-tema">Claro/Escuro</button></div>
+
+  <main class="conteudo">
+    <form id="form-feedback" class="formulario">
+      <p class="etiqueta">ÁREA RESTRITA</p>
+      <h1>Feedback e interesse</h1>
+      <p class="texto-suave">Este formulário demonstra os tipos de campo solicitados pelo professor.</p>
+      <div id="mensagem-feedback" class="mensagem oculto" role="alert" aria-live="polite"></div>
+
+      <div class="grade-formulario">
+        <div class="campo campo-largo">
+          <label for="servico">Serviço de maior interesse</label>
+          <select id="servico" name="servico" required>
+            <option value="">Selecione</option>
+            <option value="Corte tradicional">Corte tradicional</option>
+            <option value="Barba completa">Barba completa</option>
+            <option value="Corte + barba">Corte + barba</option>
+            <option value="Hidratação">Hidratação</option>
+          </select>
+        </div>
+
+        <fieldset class="grupo-opcoes">
+          <legend class="grupo-titulo">Com que frequência você iria à barbearia?</legend>
+          <label class="opcao"><input type="radio" name="frequencia" value="Semanal"> Semanal</label>
+          <label class="opcao"><input type="radio" name="frequencia" value="Quinzenal"> Quinzenal</label>
+          <label class="opcao"><input type="radio" name="frequencia" value="Mensal"> Mensal</label>
+        </fieldset>
+
+        <fieldset class="grupo-opcoes">
+          <legend class="grupo-titulo">O que deseja receber?</legend>
+          <label class="opcao"><input type="checkbox" name="preferencias" value="Promoções"> Promoções</label>
+          <label class="opcao"><input type="checkbox" name="preferencias" value="Novidades"> Novidades</label>
+          <label class="opcao"><input type="checkbox" name="preferencias" value="Lembretes"> Lembretes</label>
+        </fieldset>
+
+        <div class="campo campo-largo">
+          <label for="nota">Nota para a proposta do site: <output id="valor-nota" for="nota">8</output>/10</label>
+          <input id="nota" name="nota" type="range" min="0" max="10" value="8">
+        </div>
+
+        <div class="campo campo-largo">
+          <label for="comentario">Comentário <span class="texto-suave">(opcional)</span></label>
+          <textarea id="comentario" name="comentario"></textarea>
+        </div>
+      </div>
+
+      <div class="acoes"><button class="botao" type="submit">Enviar feedback</button></div>
+    </form>
+  </main>
+
+  <footer>© 2026 Navalha de Ouro · Projeto acadêmico de ADS</footer>
+  <script src="js/dados.js"></script>
+  <script src="js/comum.js"></script>
+  <script src="js/feedback.js"></script>
+</body>
+</html>
