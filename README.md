@@ -1,6 +1,6 @@
 # Navalha de Ouro — projeto acadêmico
 
-Site fictício de uma barbearia desenvolvido apenas com HTML5, CSS3 e JavaScript puro. A pasta `site` foi usada somente como referência para entender a proposta. O código deste projeto foi refeito de forma mais simples.
+Site fictício de uma barbearia desenvolvido apenas com HTML5, CSS3 e JavaScript puro. O código deste projeto foi refeito de forma mais simples.
 
 ## Como abrir
 
