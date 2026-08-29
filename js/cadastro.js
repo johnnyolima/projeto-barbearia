@@ -81,7 +81,7 @@ formularioCadastro.addEventListener('submit', function (evento) {
   let formularioValido = true;
   let primeiroCampoInvalido = null;
 
-  function marcarErro(campo, idErro, texto) {
+  function marcarErro(campo, idErro, texto) { /* envia a mensagem de erro do cadastro */ 
     escreverErro(idErro, texto);
     formularioValido = false;
     if (!primeiroCampoInvalido) {
@@ -121,7 +121,7 @@ formularioCadastro.addEventListener('submit', function (evento) {
     marcarErro(document.getElementById('confirmacao'), 'erro-confirmacao', 'A confirmação deve ser igual à senha.');
   }
 
-  if (!formularioValido) {
+  if (!formularioValido) {    /* Se o formulário não for True mande mensagem de erro */
     mensagemCadastro.textContent = 'Corrija os campos indicados antes de salvar.';
     mensagemCadastro.className = 'mensagem erro';
     primeiroCampoInvalido.focus();

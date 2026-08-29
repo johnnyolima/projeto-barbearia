@@ -46,6 +46,15 @@ function configurarSessao() {
   const sessao = obterSessao();
   const areaNome = document.getElementById('usuario-logado');
   const botaoSair = document.getElementById('botao-sair');
+  const linksAreaCliente = document.querySelectorAll('nav a[href="login.html"]');
+
+  linksAreaCliente.forEach(function (link) {
+    link.href = sessao ? 'painel.html' : 'login.html';
+  });
+
+  if (areaNome) {
+    areaNome.classList.add('oculto');
+  }
 
   if (document.body.dataset.restrita === 'true' && !sessao) {
     window.location.replace('404.html?tipo=auth');
@@ -54,6 +63,7 @@ function configurarSessao() {
 
   if (sessao && areaNome) {
     areaNome.textContent = 'Olá, ' + sessao.nome;
+    areaNome.classList.remove('oculto');
   }
 
   if (sessao && botaoSair) {

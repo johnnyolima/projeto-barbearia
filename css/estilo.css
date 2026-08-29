@@ -36,12 +36,14 @@ body.tema-claro {
   --cor-superficie-2: #efe8da;
   --cor-texto: #1a1714;
   --cor-texto-suave: #4d4943;
-  --cor-destaque: #7a5200;
+  --cor-destaque: #ffac05;
   --cor-destaque-hover: #5d3f00;
   --cor-borda: #b9ae9e;
   --cor-erro: #8f1d14;
   --cor-sucesso: #146c2e;
-  --cor-foco: #6f4c00;
+  --cor-foco: #865c00;
+  
+
 }
 
 a {
@@ -154,9 +156,19 @@ textarea:focus-visible {
 }
 
 .usuario-logado {
+  padding: 7px 11px;
+  border: 1px solid var(--cor-borda);
+  border-radius: 5px;
   color: var(--cor-texto-suave);
+  background: var(--cor-superficie);
   font-size: 0.92rem;
+  text-decoration: none;
 }
+
+.usuario-logado:hover {
+  color: var(--cor-destaque);
+}
+
 
 .barra-acessibilidade {
   display: flex;
@@ -179,6 +191,13 @@ textarea:focus-visible {
   color: var(--cor-texto);
   background: var(--cor-superficie);
   cursor: pointer;
+  text-decoration: none;
+  
+}
+.botao-secundario:hover,
+.botao-link:hover {
+  color: blac;
+  background: var(--cor-superficie-2);
 }
 
 .botao-link {
@@ -193,9 +212,9 @@ main {
   min-height: 520px;
   display: grid;
   align-items: center;
-  padding: 70px 7%;
+  padding: 70px 9%;
   background:
-    linear-gradient(90deg, rgba(17, 16, 15, 0.96), rgba(17, 16, 15, 0.48)),
+    linear-gradient(90deg, rgba(17, 16, 15, 0.747), rgba(17, 16, 15, 0.178)),
     url('../assets/hero-barbearia.jpg') center / cover no-repeat;
 }
 
@@ -219,12 +238,27 @@ h3 {
 
 h1 {
   margin: 10px 0 18px;
-  font-size: clamp(2.2rem, 7vw, 4.2rem);
+  font-size: clamp(2.2rem, 7vw, 2.2rem);
+}
+
+body.tema-claro .hero h1 {
+  color: #e9e1da;
+  background: rgba(17, 16, 15, 0.48);
+}
+
+body.tema-claro .hero .botao {
+  color: #e9e1da;
+  background: rgba(168, 89, 10, 0.48);
+}
+
+body.tema-claro .hero .botao:hover {
+  color: #e9e1da;
+  background: rgba(241, 150, 58, 0.48);
 }
 
 h2 {
   margin-top: 0;
-  font-size: clamp(1.7rem, 4vw, 2.3rem);
+  font-size: clamp(1.7rem, 4vw, 1.5rem);
 }
 
 h3 {
@@ -236,6 +270,54 @@ h3 {
   width: min(1120px, 100%);
   margin: 0 auto;
   padding: 56px 7%;
+}
+.pagina-horarios .cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.conteudo-horarios {
+
+  width: min(1480px, 100%);
+  min-height: 100vh;
+  margin: auto;
+  padding: 16px 0px 56px 0px;
+  background:
+    linear-gradient(90deg, rgba(17, 16, 15, 0.685), rgba(17, 16, 15, 0.274)),
+    url('../assets/fundo-horario1.jpg') center / contain no-repeat;
+    background-size: 80% auto;
+    background-position: center bottom;
+}
+.formulario-horarios {
+  font-size: .8rem;
+  text-align: center;
+  max-width: 550px ;
+  margin: 0 auto;
+  padding: 24px 50px 80px;
+  border: 2px solid var(--cor-borda);
+  border-radius: 15px;
+  background: rgba(17, 12, 0, 0.39)
+  
+  
+}
+#form-horarios h1{
+  color: var(--cor-destaque);
+  text-align: center;
+  font-size: 1.9rem;
+}
+ #form-horarios p{
+  color: var(--cor-texto-suave);
+  text-align: center;
+  font-size: 1rem;
+ }
+
+
+.conteudo .formulario-estreito,
+.conteudo .grade-cards {
+  color: var(--cor-texto-suave);
 }
 
 .secao-centro {
@@ -259,12 +341,20 @@ h3 {
   border: 1px solid var(--cor-borda);
   border-radius: 8px;
   background: var(--cor-superficie);
+  
 }
 
 .card h2,
 .card h3,
 .preco {
   color: var(--cor-destaque);
+  text-align: center;
+}
+.card p,
+.card a,
+.card link {
+  text-align: center;
+  display: block
 }
 
 .preco {
@@ -298,6 +388,8 @@ h3 {
   gap: 10px;
   margin-top: 22px;
 }
+
+
 
 .formulario {
   max-width: 850px;
