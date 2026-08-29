@@ -319,7 +319,6 @@ h3 {
   top: 0;
   z-index: 20;
   background: rgba(0, 0, 0, 0);
-  backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(10px);
 }
 .conteudo-horarios {
