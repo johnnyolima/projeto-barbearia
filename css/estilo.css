@@ -2,7 +2,7 @@
   --cor-fundo: #171513;
   --cor-superficie: #211e1a;
   --cor-superficie-2: #2b2722;
-  --cor-texto: #f4f1eb;
+  --cor-texto: #f0ebf4;
   --cor-texto-suave: #c7c2ba;
   --cor-destaque: #d7a84b;
   --cor-destaque-hover: #f0c66a;
@@ -42,9 +42,35 @@ body.tema-claro {
   --cor-erro: #8f1d14;
   --cor-sucesso: #146c2e;
   --cor-foco: #865c00;
-  
-
 }
+
+body.pagina-horarios.tema-claro {
+  --cor-fundo: #f9f3ea;
+  --cor-superficie: #fffdf9;
+  --cor-superficie-2: #f2e7d8;
+  --cor-texto: #201b18;
+  --cor-texto-suave: #524a43;
+  --cor-destaque: #d08a1e;
+  --cor-borda: #d9c2a4;
+}
+
+body.pagina-horarios.tema-claro .formulario-horarios {
+  background: rgba(255, 255, 255, 0.336);
+  border-color: #d9c2a4;
+}
+
+body.pagina-horarios.tema-claro .campo label,
+body.pagina-horarios.tema-claro .texto-suave,
+body.pagina-horarios.tema-claro #form-horarios p {
+  color: #2b2724;
+}
+
+body.pagina-horario-tema-claro .campo label,
+body.pagina-horario-tema-claro .texto-suave,
+body.pagina-horario-tema-claro #form-horarios p {
+  color: #2c2a28;
+}
+
 
 a {
   color: inherit;
@@ -299,7 +325,7 @@ h3 {
   padding: 24px 50px 80px;
   border: 2px solid var(--cor-borda);
   border-radius: 15px;
-  background: rgba(17, 12, 0, 0.39)
+  background: rgba(17, 12, 0, 0)
   
   
 }

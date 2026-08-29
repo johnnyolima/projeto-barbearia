@@ -1,11 +1,23 @@
 const CHAVE_TEMA = 'navalha_tema';
 const CHAVE_FONTE = 'navalha_fonte';
 
+function atualizarTextoBotaoTema() {
+  const botaoTema = document.querySelector('[data-acao="alternar-tema"]');
+
+  if (!botaoTema) {
+    return;
+  }
+
+  const temaClaroAtivo = document.body.classList.contains('tema-claro');
+  botaoTema.textContent = temaClaroAtivo ? 'Tema: Claro' : 'Tema: Escuro';
+}
+
 function aplicarPreferencias() {
   const tema = localStorage.getItem(CHAVE_TEMA);
   const escala = Number(localStorage.getItem(CHAVE_FONTE)) || 1;
 
   document.body.classList.toggle('tema-claro', tema === 'claro');
+  atualizarTextoBotaoTema();
   document.documentElement.style.setProperty('--escala-fonte', escala);
 }
 
@@ -18,6 +30,7 @@ function configurarAcessibilidade() {
     botaoTema.addEventListener('click', function () {
       const temaClaroAtivo = document.body.classList.toggle('tema-claro');
       localStorage.setItem(CHAVE_TEMA, temaClaroAtivo ? 'claro' : 'escuro');
+      atualizarTextoBotaoTema();
     });
   }
 
