@@ -327,7 +327,9 @@ h3 {
   min-height: 72vh;
   margin: 0 auto;
   padding: 24px 0 56px;
-  background: url('../assets/fundo-horario.jpg') center / cover no-repeat;
+  background: 
+  linear-gradient(90deg, rgba(17, 16, 15, 0.877), rgba(17, 16, 15, 0.384)),
+  url('../assets/fundo-horario.jpg') center / cover no-repeat;
 }
 
 
@@ -611,7 +613,7 @@ footer {
       display: none;
     }
 
-    
+
 
 }
 
