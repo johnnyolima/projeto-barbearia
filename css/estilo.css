@@ -97,7 +97,22 @@ select:focus-visible,
 textarea:focus-visible {
   outline: 3px solid var(--cor-foco);
 }
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
 
+.logo-navalha{
+  display: inline-block;
+  width: 55px;
+  height: 52px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background:
+    linear-gradient(90deg, rgba(17, 16, 15, 0), rgba(17, 16, 15, 0)),
+    url('../assets/icone-site.png') center / cover no-repeat;
+}
 .cabecalho {
   position: sticky;
   top: 0;
@@ -112,6 +127,8 @@ textarea:focus-visible {
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
   color: var(--cor-destaque);
   font-size: 1.3rem;
   font-weight: 700;
@@ -556,6 +573,11 @@ footer {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    gap: 12px;
+  }
+
+  .logo {
+    margin-left: 0;
   }
 
   .submenu-lista {
