@@ -1,89 +1,104 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Projeto acadêmico Navalha de Ouro, uma barbearia fictícia.">
-  <title>Navalha de Ouro | Início</title>
-  <link rel="stylesheet" href="css/estilo.css">
-  <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
-</head>
-<body>
-  <header class="cabecalho">
-    <a class="logo" href="index.html">Navalha de Ouro</a>
-    <nav class="menu" aria-label="Navegação principal">
-      <a href="index.html" aria-current="page">Início</a>
-      <details class="submenu">
-        <summary>Catálogo</summary>
-        <div class="submenu-lista">
-          <a href="servicos.html">Serviços</a>
-          <a href="produtos.html">Produtos</a>
-          <a href="horarios.html">Horários</a>
-        </div>
-      </details>
-      <a href="cadastro.html">Cadastro</a>
-      <a href="login.html">Área do cliente</a>
-    </nav>
-    <div class="area-usuario">
-      <a id="usuario-logado" class="usuario-logado" href="painel.html" aria-label="Abrir painel do cliente"></a>
-      <button id="botao-sair" class="botao-link oculto" type="button">Sair</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Projeto acadêmico Navalha de Ouro, uma barbearia fictícia." />
+    <title>Navalha de Ouro | Início</title>
+    <link rel="stylesheet" href="css/estilo.css" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <header class="cabecalho">
+      <a class="logo" href="index.html">Navalha de Ouro</a>
+      <nav class="menu" aria-label="Navegação principal">
+        <a href="index.html" aria-current="page">Início</a>
+        <details class="submenu">
+          <summary>Catálogo</summary>
+          <div class="submenu-lista">
+            <a href="servicos.html">Serviços</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="horarios.html">Horários</a>
+          </div>
+        </details>
+        <a href="cadastro.html">Cadastro</a>
+        <a href="login.html">Área do cliente</a>
+      </nav>
+      <div class="area-usuario">
+        <a
+          id="usuario-logado"
+          class="usuario-logado"
+          href="painel.html"
+          aria-label="Abrir painel do cliente"
+        ></a>
+        <button id="botao-sair" class="botao-link oculto" type="button">Sair</button>
+      </div>
+    </header>
+
+    <div class="barra-acessibilidade" aria-label="Ferramentas de acessibilidade">
+      <span>Acessibilidade:</span>
+      <button type="button" data-acao="diminuir-fonte" aria-label="Diminuir tamanho da fonte">
+        A-
+      </button>
+      <button type="button" data-acao="aumentar-fonte" aria-label="Aumentar tamanho da fonte">
+        A+
+      </button>
+      <button type="button" data-acao="alternar-tema">Claro/Escuro</button>
     </div>
-  </header>
 
-  <div class="barra-acessibilidade" aria-label="Ferramentas de acessibilidade">
-    <span>Acessibilidade:</span>
-    <button type="button" data-acao="diminuir-fonte" aria-label="Diminuir tamanho da fonte">A-</button>
-    <button type="button" data-acao="aumentar-fonte" aria-label="Aumentar tamanho da fonte">A+</button>
-    <button type="button" data-acao="alternar-tema">Claro/Escuro</button>
-  </div>
-
-  <main>
-    <section class="hero">
-      <div class="hero-conteudo">
-        <p class="etiqueta">DESDE 1998 · RIO DE JANEIRO</p>
-        <h1>Seu estilo começa com um bom corte.</h1>
-        <p>Uma barbearia fictícia criada para o projeto acadêmico de Front-End da turma de ADS.</p>
-        <div class="acoes">
-          <a class="botao" href="servicos.html">Ver serviços</a>
-          <a class="botao-secundario" href="cadastro.html">Criar cadastro</a>
+    <main>
+      <section class="hero">
+        <div class="hero-conteudo">
+          <p class="etiqueta">DESDE 1998 · RIO DE JANEIRO</p>
+          <h1>Seu estilo começa com um bom corte.</h1>
+          <p>
+            Uma barbearia fictícia criada para o projeto acadêmico de Front-End da turma de ADS.
+          </p>
+          <div class="acoes">
+            <a class="botao" href="servicos.html">Ver serviços</a>
+            <a class="botao-secundario" href="cadastro.html">Criar cadastro</a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="secao secao-centro">
-      <p class="etiqueta">SOBRE O PROJETO</p>
-      <h2>Tradição, cuidado e uma experiência simples</h2>
-      <p class="texto-suave">A Navalha de Ouro reúne serviços de barbearia, produtos de cuidado pessoal e uma área do cliente. O objetivo é praticar HTML, CSS e somente o JavaScript necessário para validações, armazenamento e interação.</p>
-    </section>
+      <section class="secao secao-centro">
+        <p class="etiqueta">SOBRE O PROJETO</p>
+        <h2>Tradição, cuidado e uma experiência simples</h2>
+        <p class="texto-suave">
+          A Navalha de Ouro reúne serviços de barbearia, produtos de cuidado pessoal e uma área do
+          cliente. O objetivo é praticar HTML, CSS e somente o JavaScript necessário para
+          validações, armazenamento e interação.
+        </p>
+      </section>
 
-    <section class="secao" aria-labelledby="catalogo-titulo">
-      <p class="etiqueta">CATÁLOGO</p>
-      <h2 id="catalogo-titulo">Produtos e serviços em destaque</h2>
-      <div class="grade-cards">
-        <article class="card">
-          <h3>Corte tradicional</h3>
-          <p>Tesoura ou máquina com acabamento e finalização.</p>
-          <p class="preco">R$ 35,00</p>
-          <a href="servicos.html">Ver todos os serviços</a>
-        </article>
-        <article class="card">
-          <h3>Barba completa</h3>
-          <p>Aparar, desenhar e finalizar a barba com cuidado.</p>
-          <p class="preco">R$ 25,00</p>
-          <a href="servicos.html">Ver todos os serviços</a>
-        </article>
-        <article class="card">
-          <h3>Pomada modeladora</h3>
-          <p>Produto fictício para modelar o cabelo com acabamento natural.</p>
-          <p class="preco">R$ 28,00</p>
-          <a class = "link" href="produtos.html">Ver todos os produtos</a>
-        </article>
-      </div>
-    </section>
-  </main>
+      <section class="secao" aria-labelledby="catalogo-titulo">
+        <p class="etiqueta">CATÁLOGO</p>
+        <h2 id="catalogo-titulo">Produtos e serviços em destaque</h2>
+        <div class="grade-cards">
+          <article class="card">
+            <h3>Corte tradicional</h3>
+            <p>Tesoura ou máquina com acabamento e finalização.</p>
+            <p class="preco">R$ 35,00</p>
+            <a href="servicos.html">Ver todos os serviços</a>
+          </article>
+          <article class="card">
+            <h3>Barba completa</h3>
+            <p>Aparar, desenhar e finalizar a barba com cuidado.</p>
+            <p class="preco">R$ 25,00</p>
+            <a href="servicos.html">Ver todos os serviços</a>
+          </article>
+          <article class="card">
+            <h3>Pomada modeladora</h3>
+            <p>Produto fictício para modelar o cabelo com acabamento natural.</p>
+            <p class="preco">R$ 28,00</p>
+            <a class="link" href="produtos.html">Ver todos os produtos</a>
+          </article>
+        </div>
+      </section>
+    </main>
 
-  <footer>© 2026 Navalha de Ouro · Projeto acadêmico de ADS</footer>
-  <script src="js/dados.js"></script>
-  <script src="js/comum.js"></script>
-</body>
+    <footer>© 2026 Navalha de Ouro</footer>
+    <script src="js/dados.js"></script>
+    <script src="js/comum.js"></script>
+  </body>
 </html>
