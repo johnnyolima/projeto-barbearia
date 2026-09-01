@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -25,76 +25,78 @@
     </div>
   </header>
 
-  <div class="barra-acessibilidade" aria-label="Ferramentas de acessibilidade">
-    <span>Acessibilidade:</span>
-    <button type="button" data-acao="diminuir-fonte">A-</button>
-    <button type="button" data-acao="aumentar-fonte">A+</button>
-    <button type="button" data-acao="alternar-tema">Claro/Escuro</button>
-  </div>
+  <div class="barra-acessibilidade" aria-label="Ferramentas de acessibilidade"><span>Acessibilidade:</span><button type="button" data-acao="diminuir-fonte">A-</button><button type="button" data-acao="aumentar-fonte">A+</button><button type="button" data-acao="alternar-tema">Claro/Escuro</button></div>
+    </div>
 
-  <main class="conteudo-horarios">
-    <form id="form-horarios" class="formulario-horarios">
-      <p class="etiqueta">ÁREA RESTRITA · AGENDAMENTO</p>
-      <h1>Marque seu horário</h1>
-      <p class="texto-suave">Escolha o serviço, o barbeiro, a data e um horário disponível para o atendimento.</p>
-      <div id="mensagem-horarios" class="mensagem oculto" role="status" aria-live="polite"></div>
+    <main class="conteudo-horarios">
+      <form id="form-horarios" class="formulario-horarios">
+        <p class="etiqueta">ÁREA RESTRITA · AGENDAMENTO</p>
+        <h1>Marque seu horário</h1>
+        <p class="texto-suave">
+          Escolha o serviço, o barbeiro, a data e um horário disponível para o atendimento.
+        </p>
+        <div id="mensagem-horarios" class="mensagem oculto" role="status" aria-live="polite"></div>
 
-      <div class="grade-formulario">
-        <div class="campo">
-          <label for="servico-horario">Serviço</label>
-          <select id="servico-horario" name="servico" required>
-            <option value="">Selecione um serviço</option>
-            <option value="Corte tradicional">Corte tradicional - R$ 35,00</option>
-            <option value="Barba completa">Barba completa - R$ 25,00</option>
-            <option value="Corte + barba">Corte + barba - R$ 55,00</option>
-            <option value="Hidratação">Hidratação - R$ 30,00</option>
-          </select>
+        <div class="grade-formulario">
+          <div class="campo">
+            <label for="servico-horario">Serviço</label>
+            <select id="servico-horario" name="servico" required>
+              <option value="">Selecione um serviço</option>
+              <option value="Corte tradicional">Corte tradicional - R$ 35,00</option>
+              <option value="Barba completa">Barba completa - R$ 25,00</option>
+              <option value="Corte + barba">Corte + barba - R$ 55,00</option>
+              <option value="Hidratação">Hidratação - R$ 30,00</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="barbeiro">Barbeiro</label>
+            <select id="barbeiro" name="barbeiro" required>
+              <option value="">Selecione um barbeiro</option>
+              <option value="Rafael">Rafael</option>
+              <option value="Bruno">Bruno</option>
+              <option value="Diego">Diego</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="data-atendimento">Data</label>
+            <input id="data-atendimento" name="data" type="date" required />
+          </div>
+
+          <div class="campo">
+            <label for="horario">Horário</label>
+            <select id="horario" name="horario" required>
+              <option value="">Selecione um horário</option>
+              <option value="09:00">09:00</option>
+              <option value="10:00">10:00</option>
+              <option value="11:00">11:00</option>
+              <option value="14:00">14:00</option>
+              <option value="15:00">15:00</option>
+              <option value="16:00">16:00</option>
+              <option value="17:00">17:00</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="observacao">Observação <span class="texto-suave">(opcional)</span></label>
+            <textarea
+              id="observacao"
+              name="observacao"
+              placeholder="Alguma preferência para o atendimento?"
+            ></textarea>
+          </div>
         </div>
 
-        <div class="campo">
-          <label for="barbeiro">Barbeiro</label>
-          <select id="barbeiro" name="barbeiro" required>
-            <option value="">Selecione um barbeiro</option>
-            <option value="Rafael">Rafael</option>
-            <option value="Bruno">Bruno</option>
-            <option value="Diego">Diego</option>
-          </select>
+        <div class="acoes">
+          <button class="botao" type="submit">Confirmar horário</button>
         </div>
+      </form>
+    </main>
 
-        <div class="campo">
-          <label for="data-atendimento">Data</label>
-          <input id="data-atendimento" name="data" type="date" required>
-        </div>
-
-        <div class="campo">
-          <label for="horario">Horário</label>
-          <select id="horario" name="horario" required>
-            <option value="">Selecione um horário</option>
-            <option value="09:00">09:00</option>
-            <option value="10:00">10:00</option>
-            <option value="11:00">11:00</option>
-            <option value="14:00">14:00</option>
-            <option value="15:00">15:00</option>
-            <option value="16:00">16:00</option>
-            <option value="17:00">17:00</option>
-          </select>
-        </div>
-
-        <div class="campo">
-          <label for="observacao">Observação <span class="texto-suave">(opcional)</span></label>
-          <textarea id="observacao" name="observacao" placeholder="Alguma preferência para o atendimento?"></textarea>
-        </div>
-      </div>
-
-      <div class="acoes">
-        <button class="botao" type="submit">Confirmar horário</button>
-      </div>
-    </form>
-  </main>
-
-  <footer>© 2026 Navalha de Ouro · Projeto acadêmico de ADS</footer>
-  <script src="js/dados.js"></script>
-  <script src="js/comum.js"></script>
-  <script src="js/horarios.js"></script>
-</body>
+    <footer>© 2026 Navalha de Ouro</footer>
+    <script src="js/dados.js"></script>
+    <script src="js/comum.js"></script>
+    <script src="js/horarios.js"></script>
+  </body>
 </html>
