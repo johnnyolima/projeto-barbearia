@@ -124,7 +124,7 @@ textarea:focus-visible {
   flex-direction: column;
   align-items: stretch;
   gap: 12px;
-  padding: 16px 5%;
+  padding: 10px 20px;
   border-bottom: 1px solid var(--cor-borda);
   background: var(--cor-superficie);
 }
@@ -179,7 +179,7 @@ textarea:focus-visible {
   display: grid;
   gap: 6px;
   margin-top: 6px;
-  padding: 10px;
+  padding: 20px;
   border: 1px solid var(--cor-borda);
   border-radius: 6px;
   background: var(--cor-superficie-2);
@@ -204,7 +204,7 @@ textarea:focus-visible {
 .usuario-logado {
   padding: 7px 11px;
   border: 1px solid var(--cor-borda);
-  border-radius: 5px;
+  border-radius: 20px;
   color: var(--cor-texto-suave);
   background: var(--cor-superficie);
   font-size: 0.92rem;
@@ -222,32 +222,39 @@ textarea:focus-visible {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 8px 5%;
+  padding: 6px 5%;
   border-bottom: 1px solid var(--cor-borda);
   background: var(--cor-superficie-2);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .barra-acessibilidade button,
 .botao-secundario,
 .botao-link {
-  padding: 7px 11px;
+  padding: 7px 7px;
   border: 1px solid var(--cor-borda);
-  border-radius: 5px;
   color: var(--cor-texto);
   background: var(--cor-superficie);
   cursor: pointer;
-  text-decoration: none;
-  
+  text-decoration: none; 
+}
+.fonte{
+  border-radius: 50%;
+}
+.tema {
+  border-radius: 20px;
 }
 .botao-secundario:hover,
 .botao-link:hover {
-  color: black;
+  color: white;
   background: var(--cor-superficie-2);
+  
 }
 
 .botao-link {
   color: var(--cor-destaque);
+  border-radius: 20px;
+  padding: 7px 11px;
 }
 
 main {
@@ -256,9 +263,8 @@ main {
 }
 
 .hero {
-  min-height: 520px;
+  min-height: 420px;
   display: grid;
-  align-items: center;
   padding: 70px 9%;
   background:
     linear-gradient(90deg, rgba(17, 16, 15, 0.747), rgba(17, 16, 15, 0.178)),
@@ -432,6 +438,7 @@ h3 {
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 22px;
+  
 }
 
 
