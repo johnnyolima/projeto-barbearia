@@ -236,7 +236,7 @@ textarea:focus-visible {
   color: var(--cor-texto);
   background: var(--cor-superficie);
   cursor: pointer;
-  text-decoration: none; 
+  text-decoration: none;
 }
 .fonte{
   border-radius: 50%;
@@ -344,8 +344,8 @@ h3 {
   min-height: 72vh;
   margin: 0 auto;
   padding: 24px 0 56px;
-  background: 
-  linear-gradient(90deg, rgba(17, 16, 15, 0.877), rgba(17, 16, 15, 0.384)),
+  background:
+  linear-gradient(90deg, rgba(17, 16, 15, 0), rgba(17, 16, 15, 0)),
   url('../assets/fundo-horario.jpg') center / cover no-repeat;
 }
 
@@ -398,7 +398,7 @@ h3 {
   border: 1px solid var(--cor-borda);
   border-radius: 8px;
   background: var(--cor-superficie);
-  
+
 }
 
 .card h2,
@@ -444,7 +444,7 @@ h3 {
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 22px;
-  
+
 }
 
 
@@ -589,7 +589,7 @@ footer {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    
+
   }
 
   .logo {
