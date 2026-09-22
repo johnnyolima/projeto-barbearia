@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Projeto acadêmico Navalha de Ouro, uma barbearia fictícia.">
   <title>Navalha de Ouro | Início</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="css/inicio.css">
   <link rel="icon" href="assets/icone-site.png">
 </head>
 <body>
@@ -39,10 +41,35 @@
     <button class="fonte" type="button" data-acao="aumentar-fonte">A+</button>
     <button class="tema" type="button" data-acao="alternar-tema">Claro/Escuro</button>
   </div>
-</div>
 
     <main>
-      <section class="hero">
+      <section class="hero hero-carrossel">
+        <div id="carouselExampleIndicators" class="carousel slide" role="region" aria-roledescription="carrossel" aria-label="Imagens da Navalha de Ouro">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Imagem 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Imagem 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Imagem 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="assets/hero-barbearia.jpg" class="d-block w-100" alt="Interior da barbearia Navalha de Ouro">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/ChatGPT%20Image%2022%20de%20set.%20de%202026%2C%2016_45_02.png" class="d-block w-100" alt="Bancada com tesoura, navalha e pincel de barbear">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/ChatGPT%20Image%2022%20de%20set.%20de%202026%2C%2016_45_08.png" class="d-block w-100" alt="Barbeiro cortando o cabelo de um cliente">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Próxima</span>
+          </button>
+        </div>
         <div class="hero-conteudo">
           <p class="etiqueta">DESDE 1998 · RIO DE JANEIRO</p>
           <h1>Seu estilo começa com um bom corte.</h1>
@@ -88,6 +115,8 @@
     </main>
 
     <footer>© 2026 Navalha de Ouro</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/inicio.js"></script>
     <script src="js/dados.js"></script>
     <script src="js/comum.js"></script>
   </body>

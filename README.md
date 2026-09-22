@@ -2,7 +2,7 @@
 
 Projeto acadêmico de Front-End do curso de Análise e Desenvolvimento de Sistemas (ADS).
 
-A proposta é simular o site de uma barbearia com fluxo público e área do cliente. O projeto usa **HTML5, CSS3 e JavaScript puro**, sem frameworks. O JavaScript foi mantido somente nas partes em que ele é necessário para atender ao enunciado: validações, API ViaCEP, `localStorage`, sessão, acessibilidade e exibição dos dados enviados.
+A proposta é simular o site de uma barbearia com fluxo público e área do cliente. O projeto usa **HTML5, CSS3 e JavaScript**, com Bootstrap 5.3.8 para o carrossel da página inicial. O JavaScript foi mantido somente nas partes em que ele é necessário para atender ao enunciado: validações, API ViaCEP, `localStorage`, sessão, acessibilidade e exibição dos dados enviados.
 
 ## Objetivo
 
@@ -170,3 +170,9 @@ Para publicar pela raiz do repositório, em **Settings > Pages** use:
 ## Observação de segurança
 
 Este é um projeto exclusivamente Front-End. A senha fica no `localStorage` em texto simples somente para simular o exercício acadêmico. Em um sistema real, autenticação e senhas devem ser tratadas em um servidor com práticas adequadas de segurança.
+
+## Carrossel da página inicial
+
+O HTML fica em `index.html`, o tamanho das imagens em `css/inicio.css` e a inicialização em `js/inicio.js`. Para trocar as fotos, altere o `src` e o `alt` das imagens dentro de `carousel-inner`. O Bootstrap é carregado pelo CDN jsDelivr e depende de internet. A navegação é manual, por setas, indicadores, teclado ou gesto de toque.
+
+O carrossel substitui o fundo do banner principal, mantendo o título e os botões sobre as imagens. Usa a foto original e as duas imagens PNG fornecidas na pasta `assets`.

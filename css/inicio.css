@@ -1,0 +1,65 @@
+/* Preserva as cores dos cards do site ao carregar o Bootstrap nesta página. */
+.card {
+  color: var(--cor-texto);
+}
+
+/* O carrossel ocupa o fundo do banner; o texto permanece sobre as imagens. */
+.hero.hero-carrossel {
+  position: relative;
+  background: #171513;
+  color: #f0ebf4;
+}
+
+.hero-carrossel .hero-conteudo {
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-carrossel .hero-conteudo a {
+  pointer-events: auto;
+}
+
+#carouselExampleIndicators {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+#carouselExampleIndicators .carousel-inner,
+#carouselExampleIndicators .carousel-item {
+  height: 100%;
+}
+
+#carouselExampleIndicators .carousel-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(17, 16, 15, 0.7), rgba(17, 16, 15, 0.1));
+  pointer-events: none;
+}
+
+#carouselExampleIndicators .carousel-control-prev,
+#carouselExampleIndicators .carousel-control-next {
+  width: 7%;
+}
+
+#carouselExampleIndicators .carousel-item img {
+  height: 100%;
+  object-fit: cover;
+}
+
+#carouselExampleIndicators .carousel-control-prev-icon,
+#carouselExampleIndicators .carousel-control-next-icon {
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+#carouselExampleIndicators .carousel-indicators {
+  width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.65);
+}
