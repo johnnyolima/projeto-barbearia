@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/estilo.css">
   <link rel="stylesheet" href="css/inicio.css">
+  <link rel="stylesheet" href="css/menu-hamburguer.css">
   <link rel="icon" href="assets/icone-site.png">
 </head>
 <body>
@@ -16,6 +17,12 @@
       <a class="logo-navalha" href="index.html" aria-label="Ir para a página inicial"></a>
       <a class="logo" href="index.html">Navalha de Ouro</a>
     </div>
+    <input id="menu-hamburguer" class="menu-hamburguer" type="checkbox">
+    <label class="botao-hamburguer" for="menu-hamburguer" aria-label="Abrir menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
     <nav class="menu" aria-label="Navegação principal">
       <a href="index.html" aria-current="page">Início</a>
       <details class="submenu">
@@ -28,11 +35,12 @@
       </details>
       <a href="cadastro.html">Cadastro</a>
       <a href="login.html">Área do cliente</a>
-    </nav>
-    <div class="area-usuario">
+      <div class="area-usuario">
       <a id="usuario-logado" class="usuario-logado" href="painel.html" aria-label="Abrir painel do cliente"></a>
       <button id="botao-sair" class="botao-link oculto" type="button">Sair</button>
     </div>
+    </nav>
+    
   </header>
 
   <div class="barra-acessibilidade" aria-label="Ferramentas de acessibilidade">

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Navalha de Ouro | Cadastro</title>
   <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="css/menu-hamburguer.css">
 </head>
 <body>
   <header class="cabecalho">
@@ -12,6 +13,10 @@
       <a class="logo-navalha" href="index.html" aria-label="Ir para a página inicial"></a>
       <a class="logo" href="index.html">Navalha de Ouro</a>
     </div>
+    <input id="menu-hamburguer" class="menu-hamburguer" type="checkbox">
+    <label class="botao-hamburguer" for="menu-hamburguer" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </label>
     <nav class="menu" aria-label="Navegação principal">
       <a href="index.html">Início</a>
       <details class="submenu">
@@ -24,8 +29,9 @@
       </details>
       <a href="cadastro.html" aria-current="page">Cadastro</a>
       <a href="login.html">Área do cliente</a>
+       <div class="area-usuario"><a id="usuario-logado" class="usuario-logado" href="painel.html" aria-label="Abrir painel do cliente"></a><button id="botao-sair" class="botao-link oculto" type="button">Sair</button></div>
     </nav>
-    <div class="area-usuario"><a id="usuario-logado" class="usuario-logado" href="painel.html" aria-label="Abrir painel do cliente"></a><button id="botao-sair" class="botao-link oculto" type="button">Sair</button></div>
+   
   </header>
   <div class="barra-acessibilidade" aria-label="Ferramentas de acessibilidade"><span>Acessibilidade:</span><button class="fonte" type="button" data-acao="diminuir-fonte">A-</button><button class="fonte" type="button" data-acao="aumentar-fonte">A+</button><button class="tema" type="button" data-acao="alternar-tema">Claro/Escuro</button></div>
 
