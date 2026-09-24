@@ -6,6 +6,17 @@ const campoTelefone = document.getElementById('telefone');
 const campoCelular = document.getElementById('celular');
 const mensagemCadastro = document.getElementById('mensagem-cadastro');
 
+document.querySelectorAll('.botao-olho').forEach(function (botao) {
+  botao.addEventListener('click', function () {
+    const campoSenha = document.getElementById(botao.dataset.alvo);
+    const mostrandoSenha = campoSenha.type === 'text';
+
+    campoSenha.type = mostrandoSenha ? 'password' : 'text';
+    botao.setAttribute('aria-label', mostrandoSenha ? 'Mostrar senha' : 'Ocultar senha');
+    botao.title = mostrandoSenha ? 'Mostrar senha' : 'Ocultar senha';
+  });
+});
+
 campoCPF.addEventListener('input', function () {
   campoCPF.value = formatarCPF(campoCPF.value);
 });
@@ -19,7 +30,7 @@ campoTelefone.addEventListener('input', function () {
 });
 
 campoCelular.addEventListener('input', function () {
-  campoCelular.value = formatarTelefone(campoCelular.value);
+  campoCelular.value = formatarCelular(campoCelular.value);
 });
 
 campoCEP.addEventListener('blur', buscarEnderecoPorCEP);
@@ -105,8 +116,8 @@ formularioCadastro.addEventListener('submit', function (evento) {
     marcarErro(campoTelefone, 'erro-telefone', 'Use o formato (+55)XX-XXXXXXXX.');
   }
 
-  if (somenteNumeros(celular).replace(/^55/, '').length !== 10) {
-    marcarErro(campoCelular, 'erro-celular', 'Use o formato (+55)XX-XXXXXXXX.');
+  if (somenteNumeros(celular).replace(/^55/, '').length !== 11) {
+    marcarErro(campoCelular, 'erro-celular', 'Use o formato (+55)XX-XXXXXXXXX.');
   }
 
   if (!/^[A-Za-z]{6}$/.test(login)) {

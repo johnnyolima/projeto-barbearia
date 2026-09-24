@@ -99,13 +99,13 @@
 
         <div class="campo">
           <label for="telefone">Telefone fixo</label>
-          <input id="telefone" name="telefone" type="text" inputmode="tel" placeholder="(+55)XX-XXXXXXXX" maxlength="18" required>
+          <input id="telefone" name="telefone" type="text" inputmode="tel" placeholder="(+55) XX-XXXXXXXX" maxlength="18" required>
           <p id="erro-telefone" class="erro-campo"></p>
         </div>
 
         <div class="campo">
           <label for="celular">Celular</label>
-          <input id="celular" name="celular" type="text" inputmode="tel" placeholder="(+55)XX-XXXXXXXX" maxlength="18" required>
+          <input id="celular" name="celular" type="text" inputmode="tel" placeholder="(+55) XX-XXXXXXXXX" maxlength="18" required>
           <p id="erro-celular" class="erro-campo"></p>
         </div>
 
@@ -117,13 +117,19 @@
 
         <div class="campo">
           <label for="senha">Senha</label>
-          <input id="senha" name="senha" type="password" maxlength="8" autocomplete="new-password" required>
+          <div class="campo-com-acao">
+            <input id="senha" name="senha" type="password" maxlength="8" autocomplete="new-password" required>
+            <button class="botao-olho" type="button" data-alvo="senha" aria-label="Mostrar senha" title="Mostrar senha">&#128065;</button>
+          </div>
           <p id="erro-senha" class="erro-campo"></p>
         </div>
 
         <div class="campo campo-largo">
           <label for="confirmacao">Confirmar senha</label>
-          <input id="confirmacao" name="confirmacao" type="password" maxlength="8" autocomplete="new-password" required>
+          <div class="campo-com-acao">
+            <input id="confirmacao" name="confirmacao" type="password" maxlength="8" autocomplete="new-password" required>
+            <button class="botao-olho" type="button" data-alvo="confirmacao" aria-label="Mostrar confirmação de senha" title="Mostrar confirmação de senha">&#128065;</button>
+          </div>
           <p id="erro-confirmacao" class="erro-campo"></p>
         </div>
       </div>

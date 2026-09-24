@@ -486,6 +486,33 @@ h3 {
   background: var(--cor-fundo);
 }
 
+.campo-com-acao {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.campo-com-acao input {
+  width: auto;
+  flex: 1;
+}
+
+.botao-olho {
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--cor-borda);
+  border-radius: 5px;
+  color: var(--cor-texto);
+  background: var(--cor-superficie-2);
+  cursor: pointer;
+}
+
+.botao-olho:hover {
+  color: var(--cor-destaque);
+}
+
 .campo input[readonly] {
   color: var(--cor-texto-suave);
   background: var(--cor-superficie-2);

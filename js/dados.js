@@ -58,6 +58,14 @@ function formatarTelefone(texto) {
   return '(+55)' + numeros.slice(0, 2) + '-' + numeros.slice(2);
 }
 
+function formatarCelular(texto) {
+  const numeros = somenteNumeros(texto).replace(/^55/, '').slice(0, 11);
+  if (numeros.length <= 2) {
+    return numeros ? '(+55)' + numeros : '';
+  }
+  return '(+55)' + numeros.slice(0, 2) + '-' + numeros.slice(2);
+}
+
 function validarCPF(cpf) {
   const numeros = somenteNumeros(cpf);
 
