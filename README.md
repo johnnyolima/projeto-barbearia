@@ -1,5 +1,7 @@
 # Navalha de Ouro
 
+https://johnnyolima.github.io/projeto-barbearia/index.html
+
 Projeto acadêmico de Front-End do curso de Análise e Desenvolvimento de Sistemas (ADS).
 
 A proposta é simular o site de uma barbearia com fluxo público e área do cliente. O projeto usa **HTML5, CSS3 e JavaScript**, com Bootstrap 5.3.8 para o carrossel da página inicial. O JavaScript foi mantido somente nas partes em que ele é necessário para atender ao enunciado: validações, API ViaCEP, `localStorage`, sessão, acessibilidade e exibição dos dados enviados.
