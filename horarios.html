@@ -44,45 +44,51 @@
         <div id="mensagem-horarios" class="mensagem oculto" role="status" aria-live="polite"></div>
 
         <div class="grade-formulario">
-          <div class="campo">
-            <label for="servico-horario">Serviço</label>
-            <select id="servico-horario" name="servico" required>
-              <option value="">Selecione um serviço</option>
-              <option value="Corte tradicional">Corte tradicional - R$ 35,00</option>
-              <option value="Barba completa">Barba completa - R$ 25,00</option>
-              <option value="Corte + barba">Corte + barba - R$ 55,00</option>
-              <option value="Hidratação">Hidratação - R$ 30,00</option>
-            </select>
-          </div>
+              <div class="container_campo">
+                <div class="campo">
+                <label for="servico-horario">Serviço</label>
+                <select id="servico-horario" name="servico" required>
+                  <option value="">Selecione um serviço</option>
+                  <option value="Corte tradicional">Corte tradicional - R$ 35,00</option>
+                  <option value="Barba completa">Barba completa - R$ 25,00</option>
+                  <option value="Corte + barba">Corte + barba - R$ 55,00</option>
+                  <option value="Hidratação">Hidratação - R$ 30,00</option>
+                </select>
+              </div>
 
-          <div class="campo">
-            <label for="barbeiro">Barbeiro</label>
-            <select id="barbeiro" name="barbeiro" required>
-              <option value="">Selecione um barbeiro</option>
-              <option value="Rafael">Rafael</option>
-              <option value="Bruno">Bruno</option>
-              <option value="Diego">Diego</option>
-            </select>
+              <div class="campo">
+                <label for="barbeiro">Barbeiro</label>
+                <select id="barbeiro" name="barbeiro" required>
+                  <option value="">Selecione um barbeiro</option>
+                  <option value="Rafael">Rafael</option>
+                  <option value="Bruno">Bruno</option>
+                  <option value="Diego">Diego</option>
+                </select>
+              </div>
           </div>
+          
+        <div class="container_campo">
+              <div class="campo">
+              <label for="data-atendimento">Data</label>
+              <input id="data-atendimento" name="data" type="date" required />
+            </div>
 
-          <div class="campo">
-            <label for="data-atendimento">Data</label>
-            <input id="data-atendimento" name="data" type="date" required />
-          </div>
+            <div class="campo">
+              <label for="horario">Horário</label>
+              <select id="horario" name="horario" required>
+                <option value="">Selecione um horário</option>
+                <option value="09:00">09:00</option>
+                <option value="10:00">10:00</option>
+                <option value="11:00">11:00</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+                <option value="16:00">16:00</option>
+                <option value="17:00">17:00</option>
+              </select>
+            </div>
 
-          <div class="campo">
-            <label for="horario">Horário</label>
-            <select id="horario" name="horario" required>
-              <option value="">Selecione um horário</option>
-              <option value="09:00">09:00</option>
-              <option value="10:00">10:00</option>
-              <option value="11:00">11:00</option>
-              <option value="14:00">14:00</option>
-              <option value="15:00">15:00</option>
-              <option value="16:00">16:00</option>
-              <option value="17:00">17:00</option>
-            </select>
-          </div>
+        </div>
+          
 
           <div class="campo">
             <label for="observacao">Observação <span class="texto-suave">(opcional)</span></label>
