@@ -112,7 +112,7 @@ formularioCadastro.addEventListener('submit', function (evento) {
     marcarErro(campoCEP, 'erro-cep', 'Informe um CEP válido e aguarde o preenchimento do endereço.');
   }
 
-  if (somenteNumeros(telefone).replace(/^55/, '').length !== 10) {
+  if (telefone && somenteNumeros(telefone).replace(/^55/, '').length !== 10) {
     marcarErro(campoTelefone, 'erro-telefone', 'Use o formato (+55)XX-XXXXXXXX.');
   }
 
