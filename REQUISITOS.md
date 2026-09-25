@@ -21,8 +21,8 @@ A coluna **Situação anterior** descreve o repositório `johnnyolima/projeto-ba
 | Nome: 15 a 80 caracteres, apenas letras | Não atendido | `js/cadastro.js` | Validação em JavaScript | Concluído |
 | CPF com dígito verificador | Não atendido | `js/dados.js`, `js/cadastro.js` | Implementado algoritmo dos dois dígitos | Concluído |
 | CEP com API e autopreenchimento | Não atendido | `js/cadastro.js` | Integração com ViaCEP e preenchimento de rua, bairro, cidade e UF | Concluído |
-| Telefone fixo no formato `(+55)XX-XXXXXXXX` | Não atendido | `js/dados.js`, `js/cadastro.js` | Criada máscara e validação | Concluído |
-| Celular no formato `(+55)XX-XXXXXXXX` | Não atendido | `js/dados.js`, `js/cadastro.js` | Criada máscara e validação | Concluído |
+| Telefone no formato `+55 (XX) XXXXX-XXXX` | Não atendido | `js/dados.js`, `js/cadastro.js` | Criada máscara e validação | Concluído |
+| Celular no formato `+55 (XX) XXXXX-XXXX` | Não atendido | `js/dados.js`, `js/cadastro.js` | Criada máscara e validação | Concluído |
 | Login com exatamente 6 letras | Não atendido | `js/cadastro.js` | Validação por expressão regular | Concluído |
 | Senha com exatamente 8 letras | Não atendido | `js/cadastro.js` | Validação por expressão regular | Concluído |
 | Confirmação idêntica à senha | Não atendido | `js/cadastro.js` | Comparação entre senha e confirmação | Concluído |
