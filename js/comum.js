@@ -56,14 +56,19 @@ function configurarAcessibilidade() {
 }
 
 function configurarSessao() {
+  const menuAreaCliente = document.getElementById('menu-area-cliente')
+  const linkEntrar = document.getElementById('link-entrar')
   const sessao = obterSessao();
   const areaNome = document.getElementById('usuario-logado');
   const botaoSair = document.getElementById('botao-sair');
-  const linksAreaCliente = document.querySelectorAll('nav a[href="login.html"]');
+  
 
-  linksAreaCliente.forEach(function (link) {
-    link.href = sessao ? 'painel.html' : 'login.html';
-  });
+  if (menuAreaCliente){
+    menuAreaCliente.hidden = !sessao;
+  }
+  if (linkEntrar) {
+    linkEntrar.hidden = Boolean(sessao)
+  }
 
   if (areaNome) {
     areaNome.classList.add('oculto');

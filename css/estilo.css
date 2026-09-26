@@ -182,13 +182,15 @@ textarea:focus-visible {
 .submenu-lista {
   position: absolute;
   display: grid;
-  gap: 6px;
-  margin-top: 6px;
-  padding: 20px;
-  border-radius: 6px;
+  padding: 15px;
+  border-radius: 20px;
   background: var(--cor-superficie-2);
   box-shadow: 0px 0px 3px  var(--cor-destaque);
 }
+#submenu-cliente{
+  width: 155px;
+}
+
 
 .submenu-lista a {
   padding: 4px 6px;

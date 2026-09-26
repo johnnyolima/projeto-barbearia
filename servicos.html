@@ -1,84 +1,134 @@
 <!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Navalha de Ouro | Serviços</title>
-  <link rel="stylesheet" href="css/estilo.css">
-  <link rel="stylesheet" href="css/menu-hamburguer.css">
-</head>
-<body>
-  <header class="cabecalho">
-    <div class="marca">
-      <a class="logo-navalha" href="index.html" aria-label="Ir para a página inicial"></a>
-      <a class="logo" href="index.html">Navalha de Ouro</a>
-    </div>
-    <input id="menu-hamburguer" class="menu-hamburguer" type="checkbox">
-    <label class="botao-hamburguer" for="menu-hamburguer" aria-label="Abrir menu">
-      <span></span><span></span><span></span>
-    </label>
-    <nav class="menu" aria-label="Navegação principal">
-      <a href="index.html">Início</a>
-      <details class="submenu">
-        <summary>Catálogo</summary>
-        <div class="submenu-lista">
-          <a href="servicos.html" aria-current="page">Serviços</a>
-          <a href="produtos.html">Produtos</a>
-          <a href="horarios.html">Horários</a>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Navalha de Ouro | Serviços</title>
+        <link rel="stylesheet" href="css/estilo.css" />
+        <link rel="stylesheet" href="css/menu-hamburguer.css" />
+    </head>
+    <body>
+        <header class="cabecalho">
+            <div class="marca">
+                <a
+                    class="logo-navalha"
+                    href="index.html"
+                    aria-label="Ir para a página inicial"
+                ></a>
+                <a class="logo" href="index.html">Navalha de Ouro</a>
+            </div>
+            <input
+                id="menu-hamburguer"
+                class="menu-hamburguer"
+                type="checkbox"
+            />
+            <label
+                class="botao-hamburguer"
+                for="menu-hamburguer"
+                aria-label="Abrir menu"
+            >
+                <span></span><span></span><span></span>
+            </label>
+            <nav class="menu" aria-label="Navegação principal">
+                <a href="index.html">Início</a>
+                <details class="submenu">
+                    <summary>Catálogo</summary>
+                    <div class="submenu-lista">
+                        <a href="servicos.html" aria-current="page">Serviços</a>
+                        <a href="produtos.html">Produtos</a>
+                    </div>
+                </details>
+                <a href="cadastro.html">Cadastro</a>
+                <a id="link-entrar" href="login.html">Entrar</a>
+                <details id="menu-area-cliente" class="submenu">
+                    <summary>Área do cliente</summary>
+                    <div class="submenu-lista" id="submenu-cliente">
+                        <a href="login.html">Entrar</a>
+                        <a href="horarios.html">Horários</a>
+                        <a href="painel.html">Painel</a>
+                        <a href="feedback.html">Feedback</a>
+                        <a href="meus-dados.html">Dados enviados</a>
+                        <a href="index.html">Site público</a>
+                    </div>
+                    </div>
+                </details>
+                <div class="area-usuario">
+                    <a
+                        id="usuario-logado"
+                        class="usuario-logado"
+                        href="painel.html"
+                        aria-label="Abrir painel do cliente"
+                    ></a
+                    ><button
+                        id="botao-sair"
+                        class="botao-link oculto"
+                        type="button"
+                    >
+                        Sair
+                    </button>
+                </div>
+            </nav>
+        </header>
+        <div
+            class="barra-acessibilidade"
+            aria-label="Ferramentas de acessibilidade"
+        >
+            <span>Acessibilidade:</span
+            ><button class="fonte" type="button" data-acao="diminuir-fonte">
+                A-</button
+            ><button class="fonte" type="button" data-acao="aumentar-fonte">
+                A+</button
+            ><button class="tema" type="button" data-acao="alternar-tema">
+                Claro/Escuro
+            </button>
         </div>
-      </details>
-      <a href="cadastro.html">Cadastro</a>
-      <a href="login.html">Área do cliente</a>
-       <div class="area-usuario"><a id="usuario-logado" class="usuario-logado" href="painel.html" aria-label="Abrir painel do cliente"></a><button id="botao-sair" class="botao-link oculto" type="button">Sair</button></div>
-    </nav>
-   
-  </header>
-  <div class="barra-acessibilidade" aria-label="Ferramentas de acessibilidade"><span>Acessibilidade:</span><button class="fonte" type="button" data-acao="diminuir-fonte">A-</button><button class="fonte" type="button" data-acao="aumentar-fonte">A+</button><button class="tema" type="button" data-acao="alternar-tema">Claro/Escuro</button></div>
 
-    <main class="conteudo">
-      <p class="etiqueta">CATÁLOGO · SERVIÇOS</p>
-      <h1>Serviços e valores</h1>
-      <p class="introducao">
-        Exemplos de serviços da barbearia fictícia, organizados diretamente no HTML para facilitar o
-        estudo.
-      </p>
-      <section class="grade-cards" aria-label="Lista de serviços">
-        <article class="card">
-          <h2>Corte tradicional</h2>
-          <p>Tesoura ou máquina com acabamento.</p>
-          <p class="preco">R$ 35,00</p>
-        </article>
-        <article class="card">
-          <h2>Barba completa</h2>
-          <p>Aparar, desenhar e finalizar a barba.</p>
-          <p class="preco">R$ 25,00</p>
-        </article>
-        <article class="card">
-          <h2>Corte + barba</h2>
-          <p>Combo para renovar o visual em um atendimento.</p>
-          <p class="preco">R$ 55,00</p>
-        </article>
-        <article class="card">
-          <h2>Corte infantil</h2>
-          <p>Atendimento especial para crianças.</p>
-          <p class="preco">R$ 30,00</p>
-        </article>
-        <article class="card">
-          <h2>Acabamento</h2>
-          <p>Ajuste de contornos e detalhes entre cortes.</p>
-          <p class="preco">R$ 15,00</p>
-        </article>
-        <article class="card">
-          <h2>Hidratação</h2>
-          <p>Cuidado complementar para cabelo e barba.</p>
-          <p class="preco">R$ 20,00</p>
-        </article>
-      </section>
-      <div class="acoes"><a class="botao" href="cadastro.html">Tenho interesse</a></div>
-    </main>
+        <main class="conteudo">
+            <p class="etiqueta">CATÁLOGO · SERVIÇOS</p>
+            <h1>Serviços e valores</h1>
+            <p class="introducao">
+                Exemplos de serviços da barbearia fictícia, organizados
+                diretamente no HTML para facilitar o estudo.
+            </p>
+            <section class="grade-cards" aria-label="Lista de serviços">
+                <article class="card">
+                    <h2>Corte tradicional</h2>
+                    <p>Tesoura ou máquina com acabamento.</p>
+                    <p class="preco">R$ 35,00</p>
+                </article>
+                <article class="card">
+                    <h2>Barba completa</h2>
+                    <p>Aparar, desenhar e finalizar a barba.</p>
+                    <p class="preco">R$ 25,00</p>
+                </article>
+                <article class="card">
+                    <h2>Corte + barba</h2>
+                    <p>Combo para renovar o visual em um atendimento.</p>
+                    <p class="preco">R$ 55,00</p>
+                </article>
+                <article class="card">
+                    <h2>Corte infantil</h2>
+                    <p>Atendimento especial para crianças.</p>
+                    <p class="preco">R$ 30,00</p>
+                </article>
+                <article class="card">
+                    <h2>Acabamento</h2>
+                    <p>Ajuste de contornos e detalhes entre cortes.</p>
+                    <p class="preco">R$ 15,00</p>
+                </article>
+                <article class="card">
+                    <h2>Hidratação</h2>
+                    <p>Cuidado complementar para cabelo e barba.</p>
+                    <p class="preco">R$ 20,00</p>
+                </article>
+            </section>
+            <div class="acoes">
+                <a class="botao" href="cadastro.html">Tenho interesse</a>
+            </div>
+        </main>
 
-    <footer>© 2026 Navalha de Ouro</footer>
-    <script src="js/dados.js"></script>
-    <script src="js/comum.js"></script>
-  </body>
+        <footer>© 2026 Navalha de Ouro</footer>
+        <script src="js/dados.js"></script>
+        <script src="js/comum.js"></script>
+    </body>
 </html>

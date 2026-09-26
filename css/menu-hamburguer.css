@@ -101,12 +101,13 @@
 
     display: flex;
     flex-direction: column;
-    width: 90%;
+    width: 50%;
 
     box-shadow: 0px 0px 3px  var(--cor-destaque);
 
     padding-left: 1rem;
     margin-left: 5%;
+    margin-bottom: 10px;
   }
 
   .area-usuario {
