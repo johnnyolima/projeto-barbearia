@@ -36,7 +36,7 @@ Praticar os fundamentos de desenvolvimento Front-End enquanto a equipe constrói
 - CPF com validação dos dígitos verificadores;
 - CEP consultado pela API ViaCEP;
 - preenchimento automático de rua, bairro, cidade e UF;
-- máscaras de telefone e celular no formato `(+55)XX-XXXXXXXX`;
+- máscaras de telefone e celular no formato `+55 (XX) XXXXX-XXXX`;
 - login com exatamente 6 letras;
 - senha com exatamente 8 letras;
 - confirmação de senha;

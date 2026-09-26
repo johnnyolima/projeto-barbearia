@@ -50,20 +50,16 @@ function formatarCEP(texto) {
   return numeros.replace(/(\d{5})(\d)/, '$1-$2');
 }
 
-function formatarTelefone(texto) {
-  const numeros = somenteNumeros(texto).replace(/^55/, '').slice(0, 10);
-  if (numeros.length <= 2) {
-    return numeros ? '(+55)' + numeros : '';
-  }
-  return '(+55)' + numeros.slice(0, 2) + '-' + numeros.slice(2);
-}
-
-function formatarCelular(texto) {
+function formatarNumeroTelefone(texto) {
   const numeros = somenteNumeros(texto).replace(/^55/, '').slice(0, 11);
-  if (numeros.length <= 2) {
-    return numeros ? '(+55)' + numeros : '';
-  }
-  return '(+55)' + numeros.slice(0, 2) + '-' + numeros.slice(2);
+  if (!numeros) return '';
+
+  const ddd = numeros.slice(0, 2);
+  const primeiroBloco = numeros.slice(2, 7);
+  const segundoBloco = numeros.slice(7);
+
+  return '+55' + (ddd ? ' (' + ddd : '') + (ddd.length === 2 ? ')' : '') +
+    (primeiroBloco ? ' ' + primeiroBloco : '') + (segundoBloco ? '-' + segundoBloco : '');
 }
 
 function validarCPF(cpf) {
