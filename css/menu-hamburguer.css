@@ -3,58 +3,132 @@
   display: none;
 }
 
-@media (max-width: 768px) {
-  .cabecalho {
+@media (max-width: 825px) {
+ .cabecalho {
     position: relative;
-    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .area-usuario {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
   }
 
   .botao-hamburguer {
     display: flex;
     width: 42px;
     height: 36px;
+    margin-left: 10px;
+
     cursor: pointer;
+
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 5px;
-    margin-left: auto;
+
+    z-index: 50;}
+
+  .botao-hamburguer {
+    display: flex;
+
+    width: 42px;
+    height: 36px;
+
+    cursor: pointer;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+    
   }
 
   .botao-hamburguer span {
     display: block;
+
     width: 25px;
     height: 3px;
+
     background-color: currentColor;
     border-radius: 2px;
   }
 
   .menu {
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    align-items: stretch;
-    padding: 1rem 0;
+    position: absolute;
+
+  top: 100%;
+  left: 0;
+  right: 7px;
+
+  width: 98%;
+
+  border-radius: 0px 0px 10px 10px ;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+
+
+  background: var(--cor-superficie);
+  border-bottom: 1px solid var(--cor-borda);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+
+  z-index: 40;
+
+  /* Estado fechado */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translateY(-10px);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s ease;
   }
 
   .menu-hamburguer:checked ~ .menu {
-    display: flex;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transform: translateY(0);
   }
 
   .menu a,
   .menu summary {
     display: block;
-    padding: 0.75rem;
+    margin-left: 15px;
   }
 
   .submenu-lista {
     position: static;
+
     display: flex;
     flex-direction: column;
+    width: 90%;
+
+    box-shadow: 0px 0px 3px  var(--cor-destaque);
+
     padding-left: 1rem;
+    margin-left: 5%;
   }
 
   .area-usuario {
-    margin-left: 0;
+     display: flex;
+    align-items: center;
+    gap: 10px;
+
+    /* empurra usuário + hambúrguer para a direita */
+    margin-left: auto;
   }
 }

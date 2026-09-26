@@ -121,9 +121,11 @@ textarea:focus-visible {
   position: sticky;
   top: 0;
   z-index: 20;
+
   display: flex;
-  flex-direction: column;
-  align-items: stretch;
+  align-items: center;
+  justify-content: space-between;
+
   gap: 12px;
   padding: 10px 20px;
   border-bottom: 1px solid var(--cor-borda);
@@ -141,9 +143,10 @@ textarea:focus-visible {
 
 .menu {
   display: flex;
-  flex-wrap: wrap;
+
   align-items: center;
   gap: 8px 16px;
+  margin-left: auto;
 }
 
 .menu > a,
@@ -177,13 +180,14 @@ textarea:focus-visible {
 }
 
 .submenu-lista {
+  position: absolute;
   display: grid;
   gap: 6px;
   margin-top: 6px;
   padding: 20px;
-  border: 1px solid var(--cor-borda);
   border-radius: 6px;
   background: var(--cor-superficie-2);
+  box-shadow: 0px 0px 3px  var(--cor-destaque);
 }
 
 .submenu-lista a {
@@ -204,6 +208,7 @@ textarea:focus-visible {
 
 .usuario-logado {
   padding: 7px 11px;
+  margin: 10px;
   border: 1px solid var(--cor-borda);
   border-radius: 20px;
   color: var(--cor-texto-suave);
@@ -233,6 +238,7 @@ textarea:focus-visible {
 .botao-secundario,
 .botao-link {
   padding: 7px 7px;
+  margin: 10px;
   border: 1px solid var(--cor-borda);
   color: var(--cor-texto);
   background: var(--cor-superficie);
@@ -655,8 +661,9 @@ footer {
     position: absolute;
     top: 100%;
     left: 0;
-    min-width: 160px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    box-shadow: 0px 0px 3px  var(--cor-destaque);
+    
   }
 
   .grade-cards,
@@ -682,7 +689,7 @@ footer {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-@media (max-width: 881px) {
+@media (max-width: 998px) {
     .logo{
       display: none;
     }

@@ -9,29 +9,55 @@
 </head>
 <body>
   <header class="cabecalho">
+
     <div class="marca">
       <a class="logo-navalha" href="index.html" aria-label="Ir para a página inicial"></a>
       <a class="logo" href="index.html">Navalha de Ouro</a>
     </div>
+    
     <input id="menu-hamburguer" class="menu-hamburguer" type="checkbox">
-    <label class="botao-hamburguer" for="menu-hamburguer" aria-label="Abrir menu">
-      <span></span><span></span><span></span>
-    </label>
+
+    <div class="area-usuario">
+      <a 
+        id="usuario-logado" 
+        class="usuario-logado" 
+        href="painel.html" 
+        aria-label="Abrir painel do cliente">
+      </a>
+
+    <button id="botao-sair" class="botao-link oculto" type="button">
+      Sair</button>
+    </div>
+   
     <nav class="menu" aria-label="Navegação principal">
+
       <a href="index.html">Início</a>
+
       <details class="submenu">
         <summary>Catálogo</summary>
+
         <div class="submenu-lista">
           <a href="servicos.html">Serviços</a>
           <a href="produtos.html" aria-current="page">Produtos</a>
           <a href="horarios.html">Horários</a>
         </div>
       </details>
+
       <a href="cadastro.html">Cadastro</a>
       <a href="login.html">Área do cliente</a>
-      <div class="area-usuario"><a id="usuario-logado" class="usuario-logado" href="painel.html" aria-label="Abrir painel do cliente"></a><button id="botao-sair" class="botao-link oculto" type="button">Sair</button></div>
+
     </nav>
     
+    
+    
+    <label 
+        class="botao-hamburguer" 
+        for="menu-hamburguer" 
+        aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
   </header>
   <div class="barra-acessibilidade" aria-label="Ferramentas de acessibilidade"><span>Acessibilidade:</span><button class="fonte" type="button" data-acao="diminuir-fonte">A-</button><button class="fonte" type="button" data-acao="aumentar-fonte">A+</button><button class="tema" type="button" data-acao="alternar-tema">Claro/Escuro</button></div>
 
