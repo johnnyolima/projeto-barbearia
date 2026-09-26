@@ -683,9 +683,30 @@ footer {
 }
 
 @media (min-width: 827px) {
+
+  .marca {
+    order: 1;
+  }
+
+  .menu {
+    order: 2;
+
+    margin-left: auto;
+  }
+
+  .area-usuario {
+    order: 3;
+
+    margin-left: 20px;
+  }
+
+  .botao-hamburguer {
+    display: none;
+  }
   .grade-cards {
     grid-template-columns: repeat(3, 1fr);
   }
+   
 
   .painel-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -695,7 +716,7 @@ footer {
     .logo{
       display: none;
     }
-
+  
 
 
 }

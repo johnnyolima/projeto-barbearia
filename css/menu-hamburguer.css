@@ -33,21 +33,7 @@
 
     z-index: 50;}
 
-  .botao-hamburguer {
-    display: flex;
-
-    width: 42px;
-    height: 36px;
-
-    cursor: pointer;
-
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    gap: 5px;
-    
-  }
+  
 
   .botao-hamburguer span {
     display: block;
@@ -124,7 +110,8 @@
   }
 
   .area-usuario {
-     display: flex;
+   
+    display: flex;
     align-items: center;
     gap: 10px;
 
