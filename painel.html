@@ -52,7 +52,7 @@
                         <a href="horarios.html">Horários</a>
                         <a href="painel.html" aria-current="page">Painel</a>
                         <a href="feedback.html">Feedback</a>
-                        <a href="meus-dados.html">Meus dados enviados</a>
+                        <a href="meus-dados.html">Dados enviados</a>
                         <a href="index.html">Site público</a>
 
                     </div>
@@ -81,16 +81,27 @@
             class="barra-acessibilidade"
             aria-label="Ferramentas de acessibilidade"
         >
-            <span>Acessibilidade:</span
-            ><button class="fonte" type="button" data-acao="diminuir-fonte">
-                A-</button
-            ><button class="fonte" type="button" data-acao="aumentar-fonte">
-                A+</button
-            >
-            <label class="tema-switch" >
+            <span>Fonte:</span>
+            <div class="container-fonte">
+
+                <div class="fonte-button">
+                    <button class="fonte" type="button" data-acao="diminuir-fonte">A- </button>
+                </div>
+
+                <div class="fonte-button">
+                    <button class="fonte" type="button" data-acao="aumentar-fonte">A+ </button>
+
+                </div>
+
+                <label class="tema-switch" >
                     <input type="checkbox" id="tema-toggle" data-acao="alternar-tema">
                     <span class="tema-slider"></span>
+                    <span class="icone-lua">☾</span>
+                    <span class="icone-sol">☀</span>                 
                 </label>
+
+
+            </div>
 
         </div>
 
