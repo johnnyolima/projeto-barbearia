@@ -1,3 +1,4 @@
+/* Cores e valores compartilhados pelos temas claro e escuro. */
 :root {
   --cor-fundo: #171513;
   --cor-superficie: #211e1a;
@@ -13,6 +14,7 @@
   --escala-fonte: 1;
 }
 
+/* Base global e foco acessível. */
 * {
   box-sizing: border-box;
 }
@@ -22,6 +24,10 @@ html {
 }
 
 body {
+  .acoes-centro {
+    justify-content: center;
+  }
+
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
@@ -47,6 +53,7 @@ body.tema-claro {
   --cor-foco: #865c00;
 }
 
+/* Ajustes de cores específicos do agendamento no tema claro. */
 body.pagina-horarios.tema-claro {
   --cor-fundo: #f9f3ea;
   --cor-superficie: #fffdf9;
@@ -57,25 +64,7 @@ body.pagina-horarios.tema-claro {
   --cor-borda: #d9c2a4;
 }
 
-body.pagina-horarios.tema-claro .formulario-horarios {
-  background: #f2e7d8a4;
-  border: 1px solid var(--cor-destaque);
-  box-shadow: 0px 0px 30px 0px var(--cor-destaque);
-}
-
-body.pagina-horarios.tema-claro .campo label,
-body.pagina-horarios.tema-claro .texto-suave,
-body.pagina-horarios.tema-claro #form-horarios p {
-  color: #2b2724;
-}
-
-body.pagina-horario-tema-claro .campo label,
-body.pagina-horario-tema-claro .texto-suave,
-body.pagina-horario-tema-claro #form-horarios p {
-  color: #2c2a28;
-}
-
-
+/* Elementos básicos e indicadores de foco. */
 a {
   color: inherit;
 }
@@ -86,9 +75,6 @@ select,
 textarea {
   font: inherit;
 }
-
-button,
-summary,
 a {
   outline-offset: 3px;
 }
@@ -101,21 +87,20 @@ select:focus-visible,
 textarea:focus-visible {
   outline: 3px solid var(--cor-foco);
 }
+/* Cabeçalho, marca e navegação. */
 .marca {
   display: inline-flex;
   align-items: center;
   gap: 8px;
 }
 
-.logo-navalha{
+.logo-navalha {
   display: inline-block;
   width: 55px;
   height: 52px;
   flex-shrink: 0;
   border-radius: 50%;
-  background:
-    linear-gradient(90deg, rgba(17, 16, 15, 0), rgba(17, 16, 15, 0)),
-    url('../assets/icone-site.png') center / cover no-repeat;
+  background: url("../assets/icone-site.png") center / cover no-repeat;
 }
 .cabecalho {
   position: sticky;
@@ -185,12 +170,12 @@ textarea:focus-visible {
   padding: 15px;
   border-radius: 20px;
   background: var(--cor-superficie-2);
-  box-shadow: 0px 0px 3px  var(--cor-destaque);
+  box-shadow: 0px 0px 3px var(--cor-destaque);
 }
-#submenu-cliente{
+/* Ajuste do submenu da área do cliente. */
+#submenu-cliente {
   width: 155px;
 }
-
 
 .submenu-lista a {
   padding: 4px 6px;
@@ -223,7 +208,7 @@ textarea:focus-visible {
   color: var(--cor-destaque);
 }
 
-
+/* Barra de acessibilidade e controle de tema. */
 .barra-acessibilidade {
   display: flex;
   flex-wrap: wrap;
@@ -245,67 +230,92 @@ textarea:focus-visible {
   background: var(--cor-superficie);
   cursor: pointer;
   text-decoration: none;
-
 }
 
+/* Switch do tema: o ícone acompanha a bolinha do controle. */
 .tema-switch {
-    position: relative;
-    display: inline-block;
-    width: 55px;
-    height: 28px;
-    cursor: pointer;
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 30px;
+  cursor: pointer;
 }
 
 .tema-switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
 }
 
 .tema-slider {
-    position: absolute;
-    inset: 0;
-
-    background: var(--cor-superficie-2);
-    border: 1px solid var(--cor-borda);
-    border-radius: 30px;
-
-    transition: 0.3s;
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--cor-borda);
+  border-radius: 30px;
+  background: var(--cor-superficie-2);
+  transition: background-color 0.3s ease;
 }
 
 .tema-slider::before {
-    content: "";
-
-    position: absolute;
-
-    width: 20px;
-    height: 20px;
-
-    left: 3px;
-    top: 3px;
-
-    border-radius: 50%;
-
-    background: var(--cor-destaque);
-
-    transition: 0.3s;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--cor-destaque);
+  content: "";
+  transition: transform 0.3s ease;
 }
 
 .tema-switch input:checked + .tema-slider::before {
-    transform: translateX(27px);
+  transform: translateX(27px);
 }
 
-
-#tema-toggle:checked + .tema-switch .tema-bolinha {
-  transform: translateX(28px);
+.icone-lua,
+.icone-sol {
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  z-index: 1;
+  display: grid;
+  width: 20px;
+  height: 20px;
+  color: #171513;
+  font-size: 13px;
+  line-height: 1;
+  place-items: center;
+  transform: translateY(-50%);
+  transition:
+    opacity 0.2s ease,
+    transform 0.3s ease;
 }
 
-#tema-toggle:focus-visible + .tema-slider {
+.icone-lua {
+  opacity: 1;
+}
+
+.icone-sol {
+  opacity: 0;
+}
+
+.tema-switch input:checked ~ .icone-lua {
+  opacity: 0;
+  transform: translate(27px, -50%);
+}
+
+.tema-switch input:checked ~ .icone-sol {
+  opacity: 1;
+  transform: translate(27px, -50%);
+}
+
+.tema-switch input:focus-visible + .tema-slider {
   outline: 3px solid var(--cor-foco);
   outline-offset: 3px;
 }
 
-.fonte{
+.fonte {
   border-radius: 50%;
 }
 .tema {
@@ -341,7 +351,7 @@ main {
   padding: 70px 9%;
   background:
     linear-gradient(90deg, rgba(17, 16, 15, 0.747), rgba(17, 16, 15, 0.178)),
-    url('../assets/hero-barbearia.jpg') center / cover no-repeat;
+    url("../assets/hero-barbearia.jpg") center / cover no-repeat;
 }
 
 .hero-conteudo {
@@ -364,7 +374,7 @@ h3 {
 
 h1 {
   margin: 10px 0 18px;
-  font-size: clamp(2.2rem, 7vw, 2.2rem);
+  font-size: 2.2rem;
 }
 
 body.tema-claro .hero h1 {
@@ -384,7 +394,7 @@ body.tema-claro .hero .botao:hover {
 
 h2 {
   margin-top: 0;
-  font-size: clamp(1.7rem, 4vw, 1.5rem);
+  font-size: 1.7rem;
 }
 
 h3 {
@@ -397,60 +407,7 @@ h3 {
   margin: 0 auto;
   padding: 56px 7%;
 }
-.pagina-horarios .cabecalho {
-  position: none;
-  top: 0;
-  z-index: 20;
-  background: var(--cor-superficie);
- 
-}
-
-.conteudo-horarios {
-  width: min(1480px, 100%);
-  min-height: 72vh;
-  margin: 0 auto;
-  padding: 24px 0 56px;
-  background:
-  linear-gradient(90deg, rgba(17, 16, 15, 0), rgba(17, 16, 15, 0)),
-  url('../assets/fundo-horario.jpg') center / cover no-repeat;
-}
-
-
-.formulario-horarios {
-  font-size: .8rem;
-  text-align: center;
-  max-width: 550px;
-  margin: 0 auto;
-  padding: 24px 50px 80px;
-  border: 1px solid var(--cor-destaque);
-  border-radius: 15px;
-  background: rgba(17, 12, 0, 0.747);
-}
-#form-horarios h1{
-  color: var(--cor-destaque);
-  text-align: center;
-  font-size: 1.9rem;
-}
- #form-horarios p{
-  color: var(--cor-texto-suave);
-  text-align: center;
-  font-size: 1rem;
- }
-
- .container_campo{
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding: 20px;
-  
- }
- .container_campo input select {
-  width: 100%;
-
- 
- }
-
-
+/* Seções, catálogo e cards. */
 .conteudo .formulario-estreito,
 .conteudo .grade-cards {
   color: var(--cor-texto-suave);
@@ -477,7 +434,6 @@ h3 {
   border: 1px solid var(--cor-borda);
   border-radius: 8px;
   background: var(--cor-superficie);
-
 }
 
 .card h2,
@@ -487,8 +443,7 @@ h3 {
   text-align: center;
 }
 .card p,
-.card a,
-.card link {
+.card a {
   text-align: center;
   display: block;
 }
@@ -496,10 +451,6 @@ h3 {
 .preco {
   font-size: 1.25rem;
   font-weight: 700;
-}
-
-.lista-simples {
-  padding-left: 20px;
 }
 
 .botao {
@@ -513,7 +464,6 @@ h3 {
   text-decoration: none;
   cursor: pointer;
   height: 45px;
-  
 }
 
 .botao:hover {
@@ -525,11 +475,9 @@ h3 {
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 22px;
-
 }
 
-
-
+/* Formulários e campos reutilizados. */
 .formulario {
   max-width: 850px;
   margin: 0 auto;
@@ -571,7 +519,6 @@ h3 {
   display: flex;
   align-items: center;
   gap: 6px;
-  
 }
 
 .campo-com-acao input {
@@ -605,6 +552,57 @@ h3 {
   resize: vertical;
 }
 
+/* Agendamento: fundo, formulário e campos específicos dessa página. */
+.conteudo-horarios {
+  width: min(1480px, 100%);
+  min-height: 72vh;
+  margin: 0 auto;
+  padding: 24px 0 56px;
+  background: url("../assets/fundo-horario.jpg") center / cover no-repeat;
+}
+
+.formulario-horarios {
+  max-width: 550px;
+  margin: 0 auto;
+  padding: 24px 50px 80px;
+  border: 1px solid var(--cor-destaque);
+  border-radius: 15px;
+  background: rgba(17, 12, 0, 0.747);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+#form-horarios h1 {
+  color: var(--cor-destaque);
+  font-size: 1.9rem;
+  text-align: center;
+}
+
+#form-horarios p {
+  color: var(--cor-texto-suave);
+  font-size: 1rem;
+  text-align: center;
+}
+
+.container_campo {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+}
+
+.pagina-horarios.tema-claro .formulario-horarios {
+  border-color: var(--cor-destaque);
+  background: #f2e7d8a4;
+  box-shadow: 0 0 30px var(--cor-destaque);
+}
+
+.pagina-horarios.tema-claro .campo label,
+.pagina-horarios.tema-claro .texto-suave,
+.pagina-horarios.tema-claro #form-horarios p {
+  color: #2b2724;
+}
+
 .grupo-opcoes {
   display: grid;
   gap: 8px;
@@ -619,6 +617,7 @@ h3 {
   gap: 8px;
 }
 
+/* Mensagens, painel, dados enviados e página de erro. */
 .erro-campo {
   min-height: 20px;
   margin: 3px 0 0;
@@ -684,6 +683,7 @@ h3 {
   display: none !important;
 }
 
+/* Rodapé e ajustes responsivos. */
 footer {
   margin-top: auto;
   padding: 26px 7%;
@@ -693,59 +693,13 @@ footer {
   text-align: center;
 }
 
-@media (min-width: 700px) {
-  .cabecalho {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    
-
-  }
-  
-}
-
 @media (max-width: 700px) {
-  .cabecalho {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    
-
-  }
-  .container_campo{
+  .container_campo {
     flex-direction: column;
   }
-
-  .logo {
-    margin-left: 0;
-  }
-
-  .submenu-lista {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 90%;
-    box-shadow: 0px 0px 3px  var(--cor-destaque);
-    
-  }
-
-  .grade-cards,
-  .painel-grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .grade-formulario {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .campo-largo {
-    grid-column: 1 / -1;
-  }
-  
 }
 
 @media (min-width: 827px) {
-
   .marca {
     order: 1;
   }
@@ -765,24 +719,18 @@ footer {
   .botao-hamburguer {
     display: none;
   }
+
   .grade-cards {
     grid-template-columns: repeat(3, 1fr);
   }
-   
 
   .painel-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
 @media (max-width: 998px) {
-    .logo{
-      display: none;
-    }
-  
-
-
-}
-
-.acoes-centro {
-  justify-content: center;
+  .logo {
+    display: none;
+  }
 }

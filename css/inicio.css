@@ -20,6 +20,7 @@
   pointer-events: auto;
 }
 
+/* Estrutura do carrossel ocupando o banner inicial. */
 #carouselExampleIndicators {
   position: absolute;
   inset: 0;
@@ -31,14 +32,20 @@
   height: 100%;
 }
 
+/* Camada de contraste sobre as imagens do carrossel. */
 #carouselExampleIndicators .carousel-item::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(17, 16, 15, 0.7), rgba(17, 16, 15, 0.1));
+  background: linear-gradient(
+    90deg,
+    rgba(17, 16, 15, 0.7),
+    rgba(17, 16, 15, 0.1)
+  );
   pointer-events: none;
 }
 
+/* Controles e indicadores do carrossel. */
 #carouselExampleIndicators .carousel-control-prev,
 #carouselExampleIndicators .carousel-control-next {
   width: 7%;

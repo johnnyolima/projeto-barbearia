@@ -1,10 +1,13 @@
+/* Controles do menu compacto ficam ocultos em telas maiores. */
 .menu-hamburguer,
 .botao-hamburguer {
   display: none;
 }
 
+/* Navegação compacta para telas de até 825px. */
 @media (max-width: 825px) {
- .cabecalho {
+  /* Cabeçalho, botão e linhas do ícone hambúrguer. */
+  .cabecalho {
     position: relative;
     display: flex;
     align-items: center;
@@ -31,9 +34,8 @@
     align-items: center;
     gap: 5px;
 
-    z-index: 50;}
-
-  
+    z-index: 50;
+  }
 
   .botao-hamburguer span {
     display: block;
@@ -45,49 +47,36 @@
     border-radius: 2px;
   }
 
+  /* Painel de navegação fechado por padrão. */
   .menu {
     position: absolute;
-
-  top: 100%;
-  left: 0;
-  right: 7px;
-
-  width: 98%;
-
-  border-radius: 0px 0px 10px 10px ;
-
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-
-
-
-  background: var(--cor-superficie);
-  border-bottom: 1px solid var(--cor-borda);
-
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-
-  z-index: 40;
-
-  /* Estado fechado */
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-
-  transform: translateY(-10px);
-
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease,
-    visibility 0.3s ease;
+    top: 100%;
+    left: 0;
+    right: 7px;
+    z-index: 40;
+    display: flex;
+    width: 98%;
+    flex-direction: column;
+    align-items: stretch;
+    border-radius: 0 0 10px 10px;
+    border-bottom: 1px solid var(--cor-borda);
+    background: var(--cor-superficie);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      visibility 0.3s ease;
   }
 
   .menu-hamburguer:checked ~ .menu {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-
-  transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
   }
 
   .menu a,
@@ -96,6 +85,7 @@
     margin-left: 15px;
   }
 
+  /* Links dos submenus e largura do submenu do cliente. */
   .submenu-lista {
     position: static;
 
@@ -103,7 +93,7 @@
     flex-direction: column;
     width: 50%;
 
-    box-shadow: 0px 0px 3px  var(--cor-destaque);
+    box-shadow: 0px 0px 3px var(--cor-destaque);
 
     padding-left: 1rem;
     margin-left: 5%;
@@ -111,15 +101,5 @@
   }
   #submenu-cliente {
     width: 50%;
-  }
-
-  .area-usuario {
-   
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    /* empurra usuário + hambúrguer para a direita */
-    margin-left: auto;
   }
 }
