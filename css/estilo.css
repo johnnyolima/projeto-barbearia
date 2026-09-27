@@ -247,6 +247,64 @@ textarea:focus-visible {
   text-decoration: none;
 
 }
+
+.tema-switch {
+    position: relative;
+    display: inline-block;
+    width: 55px;
+    height: 28px;
+    cursor: pointer;
+}
+
+.tema-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.tema-slider {
+    position: absolute;
+    inset: 0;
+
+    background: var(--cor-superficie-2);
+    border: 1px solid var(--cor-borda);
+    border-radius: 30px;
+
+    transition: 0.3s;
+}
+
+.tema-slider::before {
+    content: "";
+
+    position: absolute;
+
+    width: 20px;
+    height: 20px;
+
+    left: 3px;
+    top: 3px;
+
+    border-radius: 50%;
+
+    background: var(--cor-destaque);
+
+    transition: 0.3s;
+}
+
+.tema-switch input:checked + .tema-slider::before {
+    transform: translateX(27px);
+}
+
+
+#tema-toggle:checked + .tema-switch .tema-bolinha {
+  transform: translateX(28px);
+}
+
+#tema-toggle:focus-visible + .tema-slider {
+  outline: 3px solid var(--cor-foco);
+  outline-offset: 3px;
+}
+
 .fonte{
   border-radius: 50%;
 }

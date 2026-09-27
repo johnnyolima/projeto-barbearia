@@ -8,8 +8,10 @@ function atualizarTextoBotaoTema() {
     return;
   }
 
-  const temaClaroAtivo = document.body.classList.contains('tema-claro');
-  botaoTema.textContent = temaClaroAtivo ? 'Tema: Claro' : 'Tema: Escuro';
+  const temaClaroAtivo = 
+    document.body.classList.contains('tema-claro');
+
+  botaoTema.checked = temaClaroAtivo;
 }
 
 function aplicarPreferencias() {
@@ -26,13 +28,24 @@ function configurarAcessibilidade() {
   const botaoAumentar = document.querySelector('[data-acao="aumentar-fonte"]');
   const botaoDiminuir = document.querySelector('[data-acao="diminuir-fonte"]');
 
-  if (botaoTema) {
-    botaoTema.addEventListener('click', function () {
-      const temaClaroAtivo = document.body.classList.toggle('tema-claro');
-      localStorage.setItem(CHAVE_TEMA, temaClaroAtivo ? 'claro' : 'escuro');
-      atualizarTextoBotaoTema();
+ if (botaoTema) {
+
+    botaoTema.addEventListener('change', function () {
+
+        const temaClaroAtivo = this.checked;
+
+        document.body.classList.toggle(
+            'tema-claro',
+            temaClaroAtivo
+        );
+
+        localStorage.setItem(
+            CHAVE_TEMA,
+            temaClaroAtivo ? 'claro' : 'escuro'
+        );
     });
-  }
+
+}
 
   function alterarFonte(valor) {
     let escala = Number(localStorage.getItem(CHAVE_FONTE)) || 1;
