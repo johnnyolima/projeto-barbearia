@@ -1,185 +1,143 @@
-# Navalha de Ouro
+# Navalha de Ouro ✂️
 
-- **Site publicado:** https://johnnyolima.github.io/projeto-barbearia/index.html
-- **Protótipo no Figma:** [Desktop](https://www.figma.com/proto/2TZwG2Mvrqp7NaLzWawbPR?node-id=3-14&starting-point-node-id=3-14&scaling=scale-down-width&content-scaling=fixed) · [Tablet](https://www.figma.com/proto/2TZwG2Mvrqp7NaLzWawbPR?node-id=9-482&starting-point-node-id=9-482&scaling=min-zoom&content-scaling=fixed) · [Mobile](https://www.figma.com/proto/2TZwG2Mvrqp7NaLzWawbPR?node-id=3-34&starting-point-node-id=3-34&scaling=min-zoom&content-scaling=fixed)
+Portal de divulgação e cadastro de clientes de uma barbearia, desenvolvido como MVP **exclusivamente Front-End**.
 
-Projeto acadêmico de Front-End do curso de Análise e Desenvolvimento de Sistemas (ADS).
+| | |
+|---|---|
+| **Site publicado** | https://johnnyolima.github.io/projeto-barbearia/ |
+| **Protótipo no Figma** | [Desktop](https://www.figma.com/proto/2TZwG2Mvrqp7NaLzWawbPR?node-id=3-14&starting-point-node-id=3-14&scaling=scale-down-width&content-scaling=fixed) · [Tablet](https://www.figma.com/proto/2TZwG2Mvrqp7NaLzWawbPR?node-id=9-482&starting-point-node-id=9-482&scaling=min-zoom&content-scaling=fixed) · [Mobile](https://www.figma.com/proto/2TZwG2Mvrqp7NaLzWawbPR?node-id=3-34&starting-point-node-id=3-34&scaling=min-zoom&content-scaling=fixed) |
+| **Instituição** | UNISUAM – Análise e Desenvolvimento de Sistemas |
+| **Disciplina** | Projeto de Desenvolvimento em Front-End – 2026.2 |
+| **Professor** | Bruno Cezario |
 
-A proposta é simular o site de uma barbearia com fluxo público e área do cliente. O projeto usa **HTML5, CSS3 e JavaScript**, com Bootstrap 5.3.8 para o carrossel da página inicial. O JavaScript foi mantido somente nas partes em que ele é necessário para atender ao enunciado: validações, API ViaCEP, `localStorage`, sessão, acessibilidade e exibição dos dados enviados.
+## Equipe
 
-## Objetivo
+| Integrante | Matrícula | Responsabilidade |
+|---|---|---|
+| Johnny Oliveira de Lima | 26205643 | Página inicial, serviços, menu e barra de acessibilidade |
+| Diogo Oliveira da Silva | 26204770 | Produtos, cadastro, máscaras e consulta de CEP |
+| Bruno da Silva Trigo | 26200522 | Login, sessão, validação de CPF e `localStorage` |
+| Wector Santos de Souza | 26205309 | Feedback, confirmação dos dados, página 404 e testes |
 
-Praticar os fundamentos de desenvolvimento Front-End enquanto a equipe constrói um projeto que consiga explicar, alterar e testar. Uma tarefa só deve ser considerada concluída quando o integrante responsável consegue explicar o código correspondente.
+## Tecnologias
+
+- **HTML5** com tags semânticas (`header`, `nav`, `main`, `section`, `article`, `footer`)
+- **CSS3** com variáveis para os temas claro e escuro e media queries para a responsividade
+- **JavaScript** puro para as validações, a manipulação do DOM e a sessão
+- **Bootstrap 5.3.8**, usado somente no carrossel da página inicial
+- **API ViaCEP**, para preencher o endereço a partir do CEP
+- **localStorage**, para simular o banco de dados
+
+## Como testar
+
+Pelo site publicado, siga este roteiro:
+
+1. Abra **Cadastro** e preencha o formulário. Exemplos de dados válidos:
+   - Nome: `Joao da Silva Santos`
+   - CPF: `529.982.247-25`
+   - CEP: `01001-000` (rua, bairro, cidade e UF são preenchidos sozinhos)
+   - Telefone fixo: `(+55)21-33334444`
+   - Celular: `(+55)21-999998888`
+   - Login: `barber` (6 letras)
+   - Senha: `navalhas` (8 letras)
+2. Entre pela tela de **Login** com o login e a senha cadastrados.
+3. No **Painel**, o nome do usuário aparece no canto superior direito.
+4. Envie o **Feedback** e confira os dados na tela **Meus dados**.
+5. Clique em **Sair** e tente abrir `painel.html` de novo: o sistema mostra a página de acesso restrito.
+6. Teste os botões **A+ / A-** e o tema claro/escuro na barra de acessibilidade.
+
+Para rodar localmente, basta abrir o `index.html` com a extensão **Live Server** do VS Code. A consulta de CEP precisa de internet.
 
 ## Funcionalidades
 
 ### Fluxo público
 
-- página inicial com apresentação e catálogo;
-- menu com submenu de categorias;
-- página de serviços;
-- página de produtos;
-- cadastro de usuário;
-- login;
-- página personalizada `404.html` para erro de navegação e acesso sem autenticação.
+| Tela | Arquivo | O que faz |
+|---|---|---|
+| Página inicial | `index.html` | Apresentação da barbearia, carrossel e catálogo, com menu e submenu de categorias |
+| Serviços | `servicos.html` | Lista de serviços com descrição e preço |
+| Produtos | `produtos.html` | Lista de produtos com descrição e preço |
+| Cadastro | `cadastro.html` | Formulário completo de novo cliente |
+| Login | `login.html` | Acesso com login e senha |
+| Erro | `404.html` | Página de erro de navegação e de acesso sem login |
 
-### Área restrita
+### Área do cliente (só abre com login)
 
-- painel do cliente;
-- nome do usuário logado no cabeçalho;
-- botão de logout;
-- formulário de feedback com `select`, `radio`, `checkbox` e `range`;
-- página de confirmação com os dados enviados.
+| Tela | Arquivo | O que faz |
+|---|---|---|
+| Painel | `painel.html` | Nome do usuário no topo, atalhos e botão **Sair** |
+| Feedback | `feedback.html` | Formulário com `select`, `radio`, `checkbox` e `range` |
+| Meus dados | `meus-dados.html` | Confirmação com os dados enviados no feedback |
+| Horários | `horarios.html` | Agendamento de horário (funcionalidade extra) |
 
-### Cadastro e armazenamento
+## Validações do cadastro
 
-- nome entre 15 e 80 caracteres, somente letras e espaços;
-- CPF com validação dos dígitos verificadores;
-- CEP consultado pela API ViaCEP;
-- preenchimento automático de rua, bairro, cidade e UF;
-- máscaras de telefone fixo e celular no formato `(+55)XX-XXXXXXXX` (o celular aceita também o 9º dígito);
-- login com exatamente 6 letras;
-- senha com exatamente 8 letras;
-- confirmação de senha;
-- dados, sessão e feedback salvos no `localStorage` como JSON.
+O formulário só é salvo quando todas as regras abaixo são cumpridas. Os erros aparecem abaixo de cada campo, sem usar `window.alert()`.
 
-### Acessibilidade e responsividade
+| Campo | Regra |
+|---|---|
+| Nome completo | De 15 a 80 caracteres, apenas letras |
+| CPF | Cálculo real dos dois dígitos verificadores |
+| CEP | Consulta à API ViaCEP e preenchimento automático de rua, bairro, cidade e UF |
+| Telefone fixo e celular | Máscara `(+55)XX-XXXXXXXX` (o celular aceita também o 9º dígito) |
+| Login | Exatamente 6 letras |
+| Senha | Exatamente 8 letras |
+| Confirmação | Igual à senha |
 
-- tema claro/escuro com preferência salva no navegador;
-- botões A+ e A- para alterar o tamanho do conteúdo;
-- foco visível para navegação por teclado;
-- layout adaptado para celular, tablet e desktop.
+## Armazenamento (localStorage)
 
-## Estrutura de arquivos
+Os dados são guardados no navegador em formato JSON (`JSON.stringify` para salvar e `JSON.parse` para ler):
+
+| Chave | Conteúdo |
+|---|---|
+| `navalha_usuario` | Dados do cadastro |
+| `navalha_sessao` | Usuário logado (nome e login) |
+| `navalha_feedback` | Respostas do formulário de feedback |
+| `navalha_agendamento` | Horário agendado |
+| `navalha_tema` e `navalha_fonte` | Preferências de acessibilidade |
+
+No login, o sistema compara o que foi digitado com o cadastro salvo. Enquanto existir uma sessão, o nome do usuário aparece no topo de todas as páginas. O botão **Sair** apaga a sessão.
+
+## Acessibilidade e responsividade
+
+- **Tema claro e escuro**, com a escolha salva no navegador
+- **Botões A+ e A-**, que aumentam ou diminuem a fonte do conteúdo de 80% até 150%
+- Foco visível para navegação pelo teclado e textos alternativos nas imagens
+- Layout testado em **celular (375px)**, **tablet (768px)** e **desktop (1024px)**, com menu hambúrguer nas telas pequenas
+
+## Identidade visual
+
+| Cor | Tema escuro | Tema claro |
+|---|---|---|
+| Fundo | `#171513` | `#f7f4ee` |
+| Texto | `#f0ebf4` | `#1a1714` |
+| Destaque (dourado) | `#d7a84b` | `#ffac05` |
+
+Tipografia: **Arial**, uma fonte do sistema, de leitura fácil e carregamento rápido.
+
+## Estrutura de pastas
 
 ```text
 projeto-barbearia/
-├── index.html
-├── servicos.html
-├── produtos.html
-├── cadastro.html
-├── login.html
-├── 404.html
-├── painel.html
-├── horarios.html
-├── feedback.html
-├── meus-dados.html
+├── index.html, servicos.html, produtos.html
+├── cadastro.html, login.html, 404.html
+├── painel.html, feedback.html, meus-dados.html, horarios.html
 ├── css/
-│   ├── estilo.css           (estilos gerais, temas e responsividade)
-│   ├── inicio.css           (carrossel da página inicial)
-│   └── menu-hamburguer.css  (menu em telas pequenas)
+│   ├── estilo.css           estilos gerais, temas e responsividade
+│   ├── inicio.css           carrossel da página inicial
+│   └── menu-hamburguer.css  menu em telas pequenas
 ├── js/
-│   ├── dados.js        (localStorage, máscaras e validação de CPF)
-│   ├── comum.js        (sessão, logout, tema e A+/A-)
-│   ├── cadastro.js
-│   ├── login.js
-│   ├── feedback.js
-│   ├── meus-dados.js
-│   ├── horarios.js
-│   └── inicio.js
-├── assets/             (imagens)
-├── favicon/
-├── REQUISITOS.md
-├── TESTES.md
-└── README.md
+│   ├── dados.js        funções de localStorage, máscaras e validação de CPF
+│   ├── comum.js        sessão, logout, tema e A+/A- (usado em todas as páginas)
+│   ├── cadastro.js     validações do cadastro e consulta ao ViaCEP
+│   ├── login.js        conferência do login
+│   ├── feedback.js     envio do feedback
+│   ├── meus-dados.js   exibição dos dados enviados
+│   ├── horarios.js     agendamento
+│   └── inicio.js       carrossel
+└── assets/             imagens
 ```
-
-## Como executar
-
-O projeto não precisa de instalação.
-
-1. Baixe ou clone o repositório.
-2. Abra a pasta no VS Code.
-3. Abra `index.html` com a extensão Live Server ou outro servidor local.
-4. Faça um cadastro antes de testar o login.
-
-> A consulta de CEP depende de acesso à internet porque utiliza a API ViaCEP.
-
-## Ordem recomendada de estudo
-
-1. Estrutura de pastas e links entre páginas.
-2. HTML e tags semânticas.
-3. CSS, layout e responsividade.
-4. Fundamentos de JavaScript.
-5. DOM e eventos.
-6. Formulários e validações.
-7. `localStorage` e JSON.
-8. API ViaCEP.
-9. Login, sessão e proteção das páginas.
-10. Acessibilidade.
-11. Testes, Git, GitHub e publicação.
-12. Preparação para a apresentação.
-
-## Divisão equilibrada entre quatro integrantes
-
-A divisão abaixo distribui HTML, CSS, JavaScript e testes entre todos. Os nomes podem ser substituídos pelos nomes reais do grupo.
-
-### Integrante 1 - Página inicial, serviços e acessibilidade
-
-- **Páginas:** `index.html` e `servicos.html`.
-- **CSS:** cabeçalho, menu, hero, cards e primeira parte da responsividade em `css/estilo.css`.
-- **JavaScript:** botões A+/A- e tema em `js/comum.js`.
-- **Estudar:** HTML semântico, links, `details/summary`, Flexbox/Grid, eventos de clique e `localStorage` das preferências.
-- **Testar:** navegação, submenu, acessibilidade e telas de 375 px e 768 px.
-- **Concluído quando:** consegue explicar e alterar menu, hero, cards e os controles de acessibilidade.
-
-### Integrante 2 - Produtos e cadastro
-
-- **Páginas:** `produtos.html` e `cadastro.html`.
-- **CSS:** cards de produtos, formulário e mensagens de validação.
-- **JavaScript:** máscaras, validações simples e consulta do CEP em `js/cadastro.js`.
-- **Estudar:** formulários, eventos `input`, `blur` e `submit`, expressões regulares básicas e `fetch`.
-- **Testar:** nome, CEP, telefones, login, senha e confirmação.
-- **Concluído quando:** consegue explicar o formulário, provocar um erro de validação e corrigir o código de uma regra simples.
-
-### Integrante 3 - Dados, CPF, login e sessão
-
-- **Páginas:** `login.html` e `painel.html`.
-- **CSS:** login, painel e área do usuário no cabeçalho.
-- **JavaScript:** `js/dados.js`, `js/login.js` e parte de sessão em `js/comum.js`.
-- **Estudar:** funções, `if/else`, repetição `for`, JSON, `localStorage`, algoritmo de CPF e redirecionamento.
-- **Testar:** CPF válido/inválido, login correto/incorreto, persistência do nome e logout.
-- **Concluído quando:** consegue explicar como o cadastro vira JSON, como o login compara os dados e por que as páginas restritas exigem sessão.
-
-### Integrante 4 - Feedback, confirmação, erro e testes finais
-
-- **Páginas:** `feedback.html`, `meus-dados.html` e `404.html`.
-- **CSS:** grupos de opções, lista de dados, página de erro e revisão desktop.
-- **JavaScript:** `js/feedback.js` e `js/meus-dados.js`.
-- **Estudar:** DOM, `querySelector`, `forEach`, `radio`, `checkbox`, `range`, criação de elementos e testes de fluxo.
-- **Testar:** acesso sem login, envio do feedback, confirmação dos dados, página 404 e links relativos.
-- **Concluído quando:** consegue explicar como os campos são lidos, salvos e exibidos sem usar `alert()`.
-
-## Requisitos e testes
-
-A rastreabilidade completa entre o enunciado do professor, o estado anterior e a implementação final está em [`REQUISITOS.md`](REQUISITOS.md).
-
-Os testes realmente executados e as pendências de ambiente estão registrados em [`TESTES.md`](TESTES.md). Os 8 arquivos JavaScript passam na verificação de sintaxe (`node --check`).
-
-## Publicação
-
-Endereço esperado do GitHub Pages:
-
-`https://johnnyolima.github.io/projeto-barbearia/`
-
-Para publicar pela raiz do repositório, em **Settings > Pages** use:
-
-- Source: `Deploy from a branch`;
-- Branch: `main`;
-- Folder: `/(root)`.
-
-## Entregas externas que não podem ser criadas pelo código
-
-- **Figma:** protótipo de alta fidelidade concluído: [Desktop](https://www.figma.com/proto/2TZwG2Mvrqp7NaLzWawbPR?node-id=3-14&starting-point-node-id=3-14&scaling=scale-down-width&content-scaling=fixed), [Tablet](https://www.figma.com/proto/2TZwG2Mvrqp7NaLzWawbPR?node-id=9-482&starting-point-node-id=9-482&scaling=min-zoom&content-scaling=fixed) e [Mobile](https://www.figma.com/proto/2TZwG2Mvrqp7NaLzWawbPR?node-id=3-34&starting-point-node-id=3-34&scaling=min-zoom&content-scaling=fixed).
-- **PDF do pré-projeto:** wireframes, fluxograma de navegação, paleta de cores e tipografia (vale 10 pontos). Precisa ser feito pela equipe e, de preferência, colocado na pasta `docs/` do repositório.
-- **AVA:** o envio dos links do GitHub e do site deve ser realizado pela equipe na plataforma acadêmica.
 
 ## Observação de segurança
 
-Este é um projeto exclusivamente Front-End. A senha fica no `localStorage` em texto simples somente para simular o exercício acadêmico. Em um sistema real, autenticação e senhas devem ser tratadas em um servidor com práticas adequadas de segurança.
-
-## Carrossel da página inicial
-
-O HTML fica em `index.html`, o tamanho das imagens em `css/inicio.css` e a inicialização em `js/inicio.js`. Para trocar as fotos, altere o `src` e o `alt` das imagens dentro de `carousel-inner`. O Bootstrap é carregado pelo CDN jsDelivr e depende de internet. A navegação é manual, por setas, indicadores, teclado ou gesto de toque.
-
-O carrossel substitui o fundo do banner principal, mantendo o título e os botões sobre as imagens. Usa a foto original e as duas imagens PNG fornecidas na pasta `assets`.
+Como o projeto é só Front-End, a senha fica salva no `localStorage` sem criptografia, apenas para simular o sistema. Em um sistema real, o login e as senhas seriam tratados por um servidor com criptografia.
