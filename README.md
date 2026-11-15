@@ -1,6 +1,7 @@
 # Navalha de Ouro
 
-https://johnnyolima.github.io/projeto-barbearia/index.html
+- **Site publicado:** https://johnnyolima.github.io/projeto-barbearia/index.html
+- **Protótipo no Figma:** [Desktop](https://www.figma.com/proto/2TZwG2Mvrqp7NaLzWawbPR?node-id=3-14&starting-point-node-id=3-14&scaling=scale-down-width&content-scaling=fixed) · [Tablet](https://www.figma.com/proto/2TZwG2Mvrqp7NaLzWawbPR?node-id=9-482&starting-point-node-id=9-482&scaling=min-zoom&content-scaling=fixed) · [Mobile](https://www.figma.com/proto/2TZwG2Mvrqp7NaLzWawbPR?node-id=3-34&starting-point-node-id=3-34&scaling=min-zoom&content-scaling=fixed)
 
 Projeto acadêmico de Front-End do curso de Análise e Desenvolvimento de Sistemas (ADS).
 
@@ -169,7 +170,7 @@ Para publicar pela raiz do repositório, em **Settings > Pages** use:
 
 ## Entregas externas que não podem ser criadas pelo código
 
-- **Figma:** o professor exige um link para o protótipo de alta fidelidade. Esse link ainda precisa ser criado/inserido pela equipe.
+- **Figma:** protótipo de alta fidelidade concluído: [Desktop](https://www.figma.com/proto/2TZwG2Mvrqp7NaLzWawbPR?node-id=3-14&starting-point-node-id=3-14&scaling=scale-down-width&content-scaling=fixed), [Tablet](https://www.figma.com/proto/2TZwG2Mvrqp7NaLzWawbPR?node-id=9-482&starting-point-node-id=9-482&scaling=min-zoom&content-scaling=fixed) e [Mobile](https://www.figma.com/proto/2TZwG2Mvrqp7NaLzWawbPR?node-id=3-34&starting-point-node-id=3-34&scaling=min-zoom&content-scaling=fixed).
 - **PDF do pré-projeto:** wireframes, fluxograma de navegação, paleta de cores e tipografia (vale 10 pontos). Precisa ser feito pela equipe e, de preferência, colocado na pasta `docs/` do repositório.
 - **AVA:** o envio dos links do GitHub e do site deve ser realizado pela equipe na plataforma acadêmica.
 

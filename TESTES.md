@@ -51,5 +51,4 @@ O endpoint público `https://viacep.com.br/ws/01001000/json/` foi consultado dur
 
 - publicação efetiva no GitHub: tentativa de escrita pela integração retornou HTTP 403 `Resource not accessible by integration`;
 - GitHub Pages: deve ser validado depois que a versão final estiver no repositório e Pages estiver configurado para `main` + `/(root)`;
-- Figma de alta fidelidade: precisa ser criado pela equipe ou fornecido por uma conta Figma conectada;
 - envio dos links no AVA: ação manual da equipe.

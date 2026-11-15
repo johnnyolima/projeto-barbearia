@@ -38,7 +38,7 @@ A coluna **Situação anterior** descreve o repositório `johnnyolima/projeto-ba
 | JavaScript: validações, DOM e API | Muito básico | Arquivos `js/` | Implementado apenas o necessário ao enunciado | Concluído |
 | README explicativo e repositório organizado | Parcial | `README.md` | README atualizado e duplicação de CSS/JS removida | Concluído |
 | Documento PDF com wireframes, fluxo, paleta e tipografia | Ausente no repositório | `docs/` (a criar) | A equipe precisa montar o PDF e adicioná-lo ao repositório | **Pendente da equipe** |
-| Design de alta fidelidade no Figma | Não localizado | Link externo | A equipe precisa criar/fornecer o link do Figma | **Pendente externo** |
+| Design de alta fidelidade no Figma | Não localizado | Link externo | Protótipo criado nas versões [Desktop](https://www.figma.com/proto/2TZwG2Mvrqp7NaLzWawbPR?node-id=3-14&starting-point-node-id=3-14&scaling=scale-down-width&content-scaling=fixed), [Tablet](https://www.figma.com/proto/2TZwG2Mvrqp7NaLzWawbPR?node-id=9-482&starting-point-node-id=9-482&scaling=min-zoom&content-scaling=fixed) e [Mobile](https://www.figma.com/proto/2TZwG2Mvrqp7NaLzWawbPR?node-id=3-34&starting-point-node-id=3-34&scaling=min-zoom&content-scaling=fixed) | Concluído |
 | Site publicado por URL | Estado dependente da configuração do GitHub Pages | GitHub Pages | Código preparado com caminhos relativos e `404.html`; a tentativa de escrita pela integração GitHub retornou HTTP 403 | **Pendente de permissão/publicação** |
 | Enviar links no AVA | Não é uma tarefa do código | AVA | A equipe deve enviar o link do GitHub e do site | **Pendente externo** |
 
