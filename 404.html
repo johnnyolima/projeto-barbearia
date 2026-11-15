@@ -64,14 +64,21 @@
             class="barra-acessibilidade"
             aria-label="Ferramentas de acessibilidade"
         >
-            <span>Acessibilidade:</span
-            ><button class="fonte" type="button" data-acao="diminuir-fonte">
-                A-</button
-            ><button class="fonte" type="button" data-acao="aumentar-fonte">
-                A+</button
-            ><button class="tema" type="button" data-acao="alternar-tema">
-                Claro/Escuro
-            </button>
+            <span>Fonte:</span>
+            <div class="container-fonte">
+                <div class="fonte-button">
+                    <button class="fonte" type="button" data-acao="diminuir-fonte">A-</button>
+                </div>
+                <div class="fonte-button">
+                    <button class="fonte" type="button" data-acao="aumentar-fonte">A+</button>
+                </div>
+                <label class="tema-switch">
+                    <input type="checkbox" id="tema-toggle" data-acao="alternar-tema" aria-label="Alternar tema claro ou escuro">
+                    <span class="tema-slider"></span>
+                    <span class="icone-lua">☾</span>
+                    <span class="icone-sol">☀</span>
+                </label>
+            </div>
         </div>
 
         <main class="conteudo erro-pagina">

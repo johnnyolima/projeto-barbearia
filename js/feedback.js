@@ -22,8 +22,15 @@ formularioFeedback.addEventListener('submit', function (evento) {
     preferencias.push(item.value);
   });
 
+  const mensagem = document.getElementById('mensagem-feedback');
+
+  if (!document.getElementById('servico').value) {
+    mensagem.textContent = 'Escolha o serviço de maior interesse.';
+    mensagem.className = 'mensagem erro';
+    return;
+  }
+
   if (!frequenciaSelecionada) {
-    const mensagem = document.getElementById('mensagem-feedback');
     mensagem.textContent = 'Escolha uma frequência de visita.';
     mensagem.className = 'mensagem erro';
     return;

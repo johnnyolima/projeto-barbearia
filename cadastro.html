@@ -86,7 +86,7 @@
                 </div>
 
                 <label class="tema-switch" >
-                    <input type="checkbox" id="tema-toggle" data-acao="alternar-tema">
+                    <input type="checkbox" id="tema-toggle" data-acao="alternar-tema" aria-label="Alternar tema claro ou escuro">
                     <span class="tema-slider"></span>
                     <span class="icone-lua">☾</span>
                     <span class="icone-sol">☀</span>                 
@@ -98,7 +98,7 @@
         </div>
 
         <main class="conteudo">
-            <form id="form-cadastro" class="formulario">
+            <form id="form-cadastro" class="formulario" novalidate>
                 <p class="etiqueta">NOVO CLIENTE</p>
                 <h1>Cadastro</h1>
 
@@ -205,8 +205,9 @@
                             name="telefone"
                             type="text"
                             inputmode="tel"
-                            placeholder="+55 (11) 99999-9999"
-                            maxlength="19"
+                            placeholder="(+55)21-33334444"
+                            maxlength="16"
+                            required
                         />
                         <p id="erro-telefone" class="erro-campo"></p>
                     </div>
@@ -218,8 +219,8 @@
                             name="celular"
                             type="text"
                             inputmode="tel"
-                            placeholder="+55 (11) 99999-9999"
-                            maxlength="19"
+                            placeholder="(+55)21-999998888"
+                            maxlength="17"
                             required
                         />
                         <p id="erro-celular" class="erro-campo"></p>

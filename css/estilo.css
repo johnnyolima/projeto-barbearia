@@ -382,9 +382,12 @@ textarea:focus-visible {
   padding: 7px 11px;
 }
 
+/* A+/A-: o JS muda --escala-fonte. Dentro do main os tamanhos usam "em",
+   então títulos, textos e campos crescem juntos. */
 main {
   flex: 1;
   font-size: calc(1rem * var(--escala-fonte));
+  overflow-wrap: break-word;
 }
 
 .hero {
@@ -403,7 +406,7 @@ main {
 .etiqueta {
   margin-bottom: 8px;
   color: var(--cor-destaque);
-  font-size: 0.82rem;
+  font-size: 0.82em;
   font-weight: 700;
   letter-spacing: 1.8px;
 }
@@ -416,7 +419,7 @@ h3 {
 
 h1 {
   margin: 10px 0 18px;
-  font-size: 2.2rem;
+  font-size: 2.2em;
 }
 
 body.tema-claro .hero h1 {
@@ -436,7 +439,7 @@ body.tema-claro .hero .botao:hover {
 
 h2 {
   margin-top: 0;
-  font-size: 1.7rem;
+  font-size: 1.7em;
 }
 
 h3 {
@@ -491,7 +494,7 @@ h3 {
 }
 
 .preco {
-  font-size: 1.25rem;
+  font-size: 1.25em;
   font-weight: 700;
 }
 
@@ -610,19 +613,19 @@ h3 {
   border: 1px solid var(--cor-destaque);
   border-radius: 15px;
   background: rgba(17, 12, 0, 0.747);
-  font-size: 0.8rem;
+  font-size: 0.8em;
   text-align: center;
 }
 
 #form-horarios h1 {
   color: var(--cor-destaque);
-  font-size: 1.9rem;
+  font-size: 2.4em;
   text-align: center;
 }
 
 #form-horarios p {
   color: var(--cor-texto-suave);
-  font-size: 1rem;
+  font-size: 1.25em;
   text-align: center;
 }
 
@@ -664,7 +667,7 @@ h3 {
   min-height: 20px;
   margin: 3px 0 0;
   color: var(--cor-erro);
-  font-size: 0.86rem;
+  font-size: 0.86em;
 }
 
 .mensagem {

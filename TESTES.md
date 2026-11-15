@@ -30,7 +30,7 @@ Foram executados testes em Node.js com simulações de `localStorage`, DOM e res
 
 ## Verificações estáticas
 
-- 6 de 6 arquivos JavaScript aprovados por `node --check`;
+- 8 de 8 arquivos JavaScript aprovados por `node --check`;
 - nenhum `href` ou `src` local aponta para arquivo inexistente;
 - nenhum `window.alert()` é utilizado pelo código do projeto;
 - CSS possui abordagem mobile first e breakpoints em 768 px e 1024 px;

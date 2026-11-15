@@ -21,8 +21,8 @@ A coluna **Situação anterior** descreve o repositório `johnnyolima/projeto-ba
 | Nome: 15 a 80 caracteres, apenas letras | Não atendido | `js/cadastro.js` | Validação em JavaScript | Concluído |
 | CPF com dígito verificador | Não atendido | `js/dados.js`, `js/cadastro.js` | Implementado algoritmo dos dois dígitos | Concluído |
 | CEP com API e autopreenchimento | Não atendido | `js/cadastro.js` | Integração com ViaCEP e preenchimento de rua, bairro, cidade e UF | Concluído |
-| Telefone no formato `+55 (XX) XXXXX-XXXX` | Não atendido | `js/dados.js`, `js/cadastro.js` | Criada máscara e validação | Concluído |
-| Celular no formato `+55 (XX) XXXXX-XXXX` | Não atendido | `js/dados.js`, `js/cadastro.js` | Criada máscara e validação | Concluído |
+| Telefone fixo no formato `(+55)XX-XXXXXXXX` | Não atendido | `js/dados.js`, `js/cadastro.js` | Criada máscara e validação | Concluído |
+| Celular no formato `(+55)XX-XXXXXXXX` | Não atendido | `js/dados.js`, `js/cadastro.js` | Criada máscara e validação | Concluído |
 | Login com exatamente 6 letras | Não atendido | `js/cadastro.js` | Validação por expressão regular | Concluído |
 | Senha com exatamente 8 letras | Não atendido | `js/cadastro.js` | Validação por expressão regular | Concluído |
 | Confirmação idêntica à senha | Não atendido | `js/cadastro.js` | Comparação entre senha e confirmação | Concluído |
@@ -37,7 +37,7 @@ A coluna **Situação anterior** descreve o repositório `johnnyolima/projeto-ba
 | HTML5 semântico e CSS3 | Parcial | HTML/CSS | Mantidas tags semânticas e CSS consolidado | Concluído |
 | JavaScript: validações, DOM e API | Muito básico | Arquivos `js/` | Implementado apenas o necessário ao enunciado | Concluído |
 | README explicativo e repositório organizado | Parcial | `README.md` | README atualizado e duplicação de CSS/JS removida | Concluído |
-| Documento PDF com wireframes, fluxo, paleta e tipografia | Ausente no repositório | `materiais/guia-estudo-navalha-de-ouro.pdf` | Incluído no guia de estudo | Concluído no PDF |
+| Documento PDF com wireframes, fluxo, paleta e tipografia | Ausente no repositório | `docs/` (a criar) | A equipe precisa montar o PDF e adicioná-lo ao repositório | **Pendente da equipe** |
 | Design de alta fidelidade no Figma | Não localizado | Link externo | A equipe precisa criar/fornecer o link do Figma | **Pendente externo** |
 | Site publicado por URL | Estado dependente da configuração do GitHub Pages | GitHub Pages | Código preparado com caminhos relativos e `404.html`; a tentativa de escrita pela integração GitHub retornou HTTP 403 | **Pendente de permissão/publicação** |
 | Enviar links no AVA | Não é uma tarefa do código | AVA | A equipe deve enviar o link do GitHub e do site | **Pendente externo** |

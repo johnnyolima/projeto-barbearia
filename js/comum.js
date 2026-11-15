@@ -49,7 +49,8 @@ function configurarAcessibilidade() {
 
   function alterarFonte(valor) {
     let escala = Number(localStorage.getItem(CHAVE_FONTE)) || 1;
-    escala = Math.min(1.2, Math.max(0.9, escala + valor));
+    // A fonte pode variar de 80% até 150%.
+    escala = Math.min(1.5, Math.max(0.8, escala + valor));
     escala = Number(escala.toFixed(1));
     localStorage.setItem(CHAVE_FONTE, escala);
     document.documentElement.style.setProperty('--escala-fonte', escala);

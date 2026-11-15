@@ -26,11 +26,11 @@ campoCEP.addEventListener('input', function () {
 });
 
 campoTelefone.addEventListener('input', function () {
-  campoTelefone.value = formatarNumeroTelefone(campoTelefone.value);
+  campoTelefone.value = formatarTelefone(campoTelefone.value, 8);
 });
 
 campoCelular.addEventListener('input', function () {
-  campoCelular.value = formatarNumeroTelefone(campoCelular.value);
+  campoCelular.value = formatarTelefone(campoCelular.value, 9);
 });
 
 campoCEP.addEventListener('blur', buscarEnderecoPorCEP);
@@ -52,6 +52,7 @@ async function buscarEnderecoPorCEP() {
 
     if (endereco.erro) {
       erroCEP.textContent = 'CEP não encontrado.';
+      document.getElementById('cidade').value = '';
       return;
     }
 
@@ -112,12 +113,14 @@ formularioCadastro.addEventListener('submit', function (evento) {
     marcarErro(campoCEP, 'erro-cep', 'Informe um CEP válido e aguarde o preenchimento do endereço.');
   }
 
-  if (telefone && somenteNumeros(telefone).replace(/^55/, '').length !== 11) {
-    marcarErro(campoTelefone, 'erro-telefone', 'Use o formato +55 (XX) XXXXX-XXXX.');
+  // Fixo: (+55)XX-XXXXXXXX (8 números depois do hífen)
+  if (!/^\(\+55\)\d{2}-\d{8}$/.test(telefone)) {
+    marcarErro(campoTelefone, 'erro-telefone', 'Use o formato (+55)XX-XXXXXXXX.');
   }
 
-  if (somenteNumeros(celular).replace(/^55/, '').length !== 11) {
-    marcarErro(campoCelular, 'erro-celular', 'Use o formato +55 (XX) XXXXX-XXXX.');
+  // Celular: mesmo formato, aceitando também o 9º dígito
+  if (!/^\(\+55\)\d{2}-\d{8,9}$/.test(celular)) {
+    marcarErro(campoCelular, 'erro-celular', 'Use o formato (+55)XX-XXXXXXXX.');
   }
 
   if (!/^[A-Za-z]{6}$/.test(login)) {

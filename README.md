@@ -36,7 +36,7 @@ Praticar os fundamentos de desenvolvimento Front-End enquanto a equipe constrói
 - CPF com validação dos dígitos verificadores;
 - CEP consultado pela API ViaCEP;
 - preenchimento automático de rua, bairro, cidade e UF;
-- máscaras de telefone e celular no formato `+55 (XX) XXXXX-XXXX`;
+- máscaras de telefone fixo e celular no formato `(+55)XX-XXXXXXXX` (o celular aceita também o 9º dígito);
 - login com exatamente 6 letras;
 - senha com exatamente 8 letras;
 - confirmação de senha;
@@ -60,21 +60,24 @@ projeto-barbearia/
 ├── login.html
 ├── 404.html
 ├── painel.html
+├── horarios.html
 ├── feedback.html
 ├── meus-dados.html
 ├── css/
-│   └── estilo.css
+│   ├── estilo.css           (estilos gerais, temas e responsividade)
+│   ├── inicio.css           (carrossel da página inicial)
+│   └── menu-hamburguer.css  (menu em telas pequenas)
 ├── js/
-│   ├── dados.js
-│   ├── comum.js
+│   ├── dados.js        (localStorage, máscaras e validação de CPF)
+│   ├── comum.js        (sessão, logout, tema e A+/A-)
 │   ├── cadastro.js
 │   ├── login.js
 │   ├── feedback.js
-│   └── meus-dados.js
-├── assets/
-│   └── hero-barbearia.jpg
-├── materiais/
-│   └── guia-estudo-navalha-de-ouro.pdf
+│   ├── meus-dados.js
+│   ├── horarios.js
+│   └── inicio.js
+├── assets/             (imagens)
+├── favicon/
 ├── REQUISITOS.md
 ├── TESTES.md
 └── README.md
@@ -150,7 +153,7 @@ A divisão abaixo distribui HTML, CSS, JavaScript e testes entre todos. Os nomes
 
 A rastreabilidade completa entre o enunciado do professor, o estado anterior e a implementação final está em [`REQUISITOS.md`](REQUISITOS.md).
 
-Os testes realmente executados e as pendências de ambiente estão registrados em [`TESTES.md`](TESTES.md). Na revisão final, os 6 arquivos JavaScript passaram na verificação de sintaxe e 17 de 17 testes automatizados de lógica foram aprovados.
+Os testes realmente executados e as pendências de ambiente estão registrados em [`TESTES.md`](TESTES.md). Os 8 arquivos JavaScript passam na verificação de sintaxe (`node --check`).
 
 ## Publicação
 
@@ -167,6 +170,7 @@ Para publicar pela raiz do repositório, em **Settings > Pages** use:
 ## Entregas externas que não podem ser criadas pelo código
 
 - **Figma:** o professor exige um link para o protótipo de alta fidelidade. Esse link ainda precisa ser criado/inserido pela equipe.
+- **PDF do pré-projeto:** wireframes, fluxograma de navegação, paleta de cores e tipografia (vale 10 pontos). Precisa ser feito pela equipe e, de preferência, colocado na pasta `docs/` do repositório.
 - **AVA:** o envio dos links do GitHub e do site deve ser realizado pela equipe na plataforma acadêmica.
 
 ## Observação de segurança
