@@ -7,6 +7,8 @@
         <script>
             if (window.location.hostname.endsWith('github.io')) {
                 document.getElementById('base-projeto').href = '/projeto-barbearia/';
+            } else if (window.location.protocol === 'file:') {
+                document.getElementById('base-projeto').href = './';
             }
         </script>
         <title>Navalha de Ouro | Página não encontrada</title>

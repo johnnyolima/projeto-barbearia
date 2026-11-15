@@ -27,7 +27,7 @@ Portal de divulgação e cadastro de clientes de uma barbearia, desenvolvido com
 - **JavaScript** puro para as validações, a manipulação do DOM e a sessão
 - **Bootstrap 5.3.8**, usado somente no carrossel da página inicial
 - **API ViaCEP**, para preencher o endereço a partir do CEP
-- **localStorage**, para simular o banco de dados
+- **localStorage**, para persistência somente no navegador; o projeto não possui backend nem banco de dados
 
 ## Como testar
 
@@ -66,7 +66,7 @@ Para rodar localmente, basta abrir o `index.html` com a extensão **Live Server*
 
 | Tela | Arquivo | O que faz |
 |---|---|---|
-| Painel | `painel.html` | Nome do usuário no topo, atalhos e botão **Sair** |
+| Painel | `painel.html` | Nome do usuário, atalhos, agendamento atual e opção de cancelamento |
 | Feedback | `feedback.html` | Formulário com `select`, `radio`, `checkbox` e `range` |
 | Meus dados | `meus-dados.html` | Confirmação com os dados enviados no feedback |
 | Horários | `horarios.html` | Agendamento de horário (funcionalidade extra) |
@@ -121,25 +121,46 @@ Tipografia: **Arial**, uma fonte do sistema, de leitura fácil e carregamento r�
 
 ```text
 projeto-barbearia/
-├── index.html, servicos.html, produtos.html
-├── cadastro.html, login.html, 404.html
-├── painel.html, feedback.html, meus-dados.html, horarios.html
+├── 404.html
+├── cadastro.html
+├── feedback.html
+├── horarios.html
+├── index.html
+├── login.html
+├── meus-dados.html
+├── painel.html
+├── produtos.html
+├── servicos.html
+├── assets/
+│   ├── bancada-barbearia.png
+│   ├── corte-barbearia.png
+│   ├── fundo-horario.jpg
+│   ├── fundo-horario1.jpg
+│   ├── fundo-horario2.jpg
+│   ├── hero-barbearia.jpg
+│   └── icone-site.png
 ├── css/
-│   ├── estilo.css           estilos gerais, temas e responsividade
-│   ├── inicio.css           carrossel da página inicial
-│   └── menu-hamburguer.css  menu em telas pequenas
+│   ├── estilo.css
+│   ├── inicio.css
+│   └── menu-hamburguer.css
+├── favicon/
+│   └── favicon.ico
 ├── js/
-│   ├── dados.js        funções de localStorage, máscaras e validação de CPF
-│   ├── comum.js        sessão, logout, tema e A+/A- (usado em todas as páginas)
-│   ├── cadastro.js     validações do cadastro e consulta ao ViaCEP
-│   ├── login.js        conferência do login
-│   ├── feedback.js     envio do feedback
-│   ├── meus-dados.js   exibição dos dados enviados
-│   ├── horarios.js     agendamento
-│   └── inicio.js       carrossel
-├── assets/             imagens
-└── output/pdf/         documento de pré-projeto
+│   ├── cadastro.js
+│   ├── comum.js
+│   ├── dados.js
+│   ├── feedback.js
+│   ├── horarios.js
+│   ├── inicio.js
+│   ├── login.js
+│   ├── painel.js
+│   └── meus-dados.js
+└── output/
+    └── pdf/
+        └── pre-projeto-navalha-de-ouro.pdf
 ```
+
+Os estilos ficam em `css/`; os scripts em `js/`; imagens e ícones em `assets/` e `favicon/`. O projeto é estático e front-end: não há servidor, backend ou banco de dados.
 
 ## Observação de segurança
 

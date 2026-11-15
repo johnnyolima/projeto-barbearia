@@ -70,7 +70,14 @@ function formatarCEP(texto) {
 // Máscara do enunciado: (+55)XX-XXXXXXXX  (XX = DDD)
 // limite = quantos números vêm depois do hífen (8 nos dois campos).
 function formatarTelefone(texto, limite) {
-  const numeros = somenteNumeros(texto.replace('(+55)', '')).slice(0, 2 + limite);
+  const possuiCodigoPais = texto.startsWith('(+55)');
+  let numeros = somenteNumeros(possuiCodigoPais ? texto.slice(5) : texto);
+
+  if (!possuiCodigoPais && numeros.length === limite + 4 && numeros.startsWith('55')) {
+    numeros = numeros.slice(2);
+  }
+
+  numeros = numeros.slice(0, 2 + limite);
 
   if (numeros.length === 0) return '';
   if (numeros.length <= 2) return '(+55)' + numeros;

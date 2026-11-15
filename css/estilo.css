@@ -535,6 +535,15 @@ h3 {
   margin-top: 22px;
 }
 
+.painel-acoes {
+  justify-content: center;
+}
+
+.painel-acoes > .botao-secundario {
+  min-width: 170px;
+  text-align: center;
+}
+
 /* Formulários e campos reutilizados. */
 .formulario {
   max-width: 850px;
@@ -711,6 +720,16 @@ h3 {
   display: grid;
   gap: 18px;
   grid-template-columns: 1fr;
+}
+
+.painel-grid > .card {
+  display: flex;
+  flex-direction: column;
+}
+
+.painel-grid .painel-acoes {
+  margin-top: auto;
+  padding-top: 22px;
 }
 
 .dados-lista {

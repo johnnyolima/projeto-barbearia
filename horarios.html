@@ -29,16 +29,25 @@
             >
                 <span></span><span></span><span></span>
             </label>
-            <nav class="menu" aria-label="Navegação da área do cliente">
+            <nav class="menu" aria-label="Navegação principal">
+                <a href="index.html">Início</a>
                 <details class="submenu">
+                    <summary>Catálogo</summary>
+                    <div class="submenu-lista">
+                        <a href="servicos.html">Serviços</a>
+                        <a href="produtos.html">Produtos</a>
+                    </div>
+                </details>
+                <a href="cadastro.html">Cadastro</a>
+                <a id="link-entrar" href="login.html">Entrar</a>
+                <details id="menu-area-cliente" class="submenu">
                     <summary>Área do cliente</summary>
-                  <div class="submenu-lista" id="submenu-cliente">
+                    <div class="submenu-lista" id="submenu-cliente">
                         <a href="login.html">Entrar</a>
                         <a href="horarios.html">Horários</a>
                         <a href="painel.html">Painel</a>
                         <a href="feedback.html">Feedback</a>
                         <a href="meus-dados.html">Dados enviados</a>
-                        <a href="index.html">Site público</a>
                     </div>
                 </details>
                 <div class="area-usuario">
@@ -47,8 +56,8 @@
                         class="usuario-logado"
                         href="painel.html"
                         aria-label="Abrir painel do cliente"
-                    ></a>
-                    <button
+                    ></a
+                    ><button
                         id="botao-sair"
                         class="botao-link oculto"
                         type="button"

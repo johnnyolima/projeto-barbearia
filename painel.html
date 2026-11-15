@@ -53,7 +53,6 @@
                         <a href="painel.html" aria-current="page">Painel</a>
                         <a href="feedback.html">Feedback</a>
                         <a href="meus-dados.html">Dados enviados</a>
-                        <a href="index.html">Site público</a>
 
                     </div>
 
@@ -119,17 +118,38 @@
                         Informe serviço de interesse, frequência, nota e
                         preferências.
                     </p>
-                    <a href="feedback.html">Abrir formulário</a>
+                    <div class="acoes painel-acoes">
+                        <a class="botao-secundario" href="feedback.html">Abrir formulário</a>
+                    </div>
                 </article>
                 <article class="card">
                     <h2>Ver dados enviados</h2>
                     <p>Consulte os dados salvos pelo formulário de feedback.</p>
-                    <a href="meus-dados.html">Ver confirmação</a>
+                    <div class="acoes painel-acoes">
+                        <a class="botao-secundario" href="meus-dados.html">Ver confirmação</a>
+                    </div>
                 </article>
                 <article class="card">
-                    <h2>Voltar ao catálogo</h2>
-                    <p>Continue navegando pelos serviços e produtos.</p>
-                    <a href="index.html">Ir para o site público</a>
+                    <h2>Meu horário marcado</h2>
+                    <p id="resumo-agendamento">Você ainda não tem um horário marcado.</p>
+                    <p
+                        id="mensagem-agendamento"
+                        class="mensagem oculto"
+                        role="status"
+                        aria-live="polite"
+                    ></p>
+                    <div class="acoes painel-acoes">
+                        <a id="link-agendar" class="botao-secundario" href="horarios.html">
+                            Marcar horário
+                        </a>
+                        <button
+                            id="botao-cancelar-agendamento"
+                            class="botao-secundario oculto"
+                            type="button"
+                        >
+                            Cancelar horário
+                        </button>
+                    </div>
                 </article>
             </section>
         </main>
@@ -137,5 +157,6 @@
         <footer>© 2026 Navalha de Ouro</footer>
         <script src="js/dados.js"></script>
         <script src="js/comum.js"></script>
+        <script src="js/painel.js"></script>
     </body>
 </html>

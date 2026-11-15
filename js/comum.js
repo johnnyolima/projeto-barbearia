@@ -14,13 +14,25 @@ function atualizarTextoBotaoTema() {
   botaoTema.checked = temaClaroAtivo;
 }
 
+function aplicarEscalaFonte(escala) {
+  document.documentElement.style.setProperty('--escala-fonte', escala);
+
+  const codigoErro = document.querySelector('.erro-codigo');
+  if (codigoErro) {
+    codigoErro.style.fontSize = 'clamp('
+      + (4 * escala) + 'rem, '
+      + (18 * escala) + 'vw, '
+      + (9 * escala) + 'rem)';
+  }
+}
+
 function aplicarPreferencias() {
   const tema = localStorage.getItem(CHAVE_TEMA);
   const escala = Number(localStorage.getItem(CHAVE_FONTE)) || 1;
 
   document.body.classList.toggle('tema-claro', tema === 'claro');
   atualizarTextoBotaoTema();
-  document.documentElement.style.setProperty('--escala-fonte', escala);
+  aplicarEscalaFonte(escala);
 }
 
 function configurarAcessibilidade() {
@@ -46,7 +58,7 @@ function configurarAcessibilidade() {
     escala = Math.min(1.5, Math.max(0.8, escala + valor));
     escala = Number(escala.toFixed(1));
     localStorage.setItem(CHAVE_FONTE, escala);
-    document.documentElement.style.setProperty('--escala-fonte', escala);
+    aplicarEscalaFonte(escala);
   }
 
   if (botaoAumentar) {
