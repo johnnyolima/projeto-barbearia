@@ -30,16 +30,16 @@ A coluna **Situação anterior** descreve o repositório `johnnyolima/projeto-ba
 | Login valida dados do cadastro | Não atendido | `js/login.js` | Comparação com objeto salvo no `localStorage` | Concluído |
 | Estado de login persiste nas telas internas | Não atendido | `js/comum.js` | Sessão em `localStorage` e nome no cabeçalho | Concluído |
 | Proibido usar `window.alert()` | Atendido no código anterior | Todo o projeto | Mantidos feedbacks visuais em elementos da página | Concluído |
-| Responsivo em 375px+, 768px+ e 1024px+ | Parcial | `css/estilo.css` | CSS consolidado e breakpoints em 768px e 1024px, com base mobile | Concluído |
+| Responsivo em 375px+, 768px+ e 1024px+ | Parcial | `css/estilo.css` | Layout testado nas três larguras, inclusive com fonte ampliada | Concluído |
 | Menu intuitivo e Logout após login | Parcial | HTML + `js/comum.js` | Cabeçalho unificado e Logout disponível com sessão | Concluído |
 | Acessibilidade: tema claro/escuro | Não atendido | `css/estilo.css`, `js/comum.js` | Alternância de tema salva no navegador | Concluído - desafio Plus |
 | Acessibilidade: A+ / A- | Não atendido | `css/estilo.css`, `js/comum.js` | Escala de fonte do conteúdo com preferência salva | Concluído - desafio Plus |
 | HTML5 semântico e CSS3 | Parcial | HTML/CSS | Mantidas tags semânticas e CSS consolidado | Concluído |
 | JavaScript: validações, DOM e API | Muito básico | Arquivos `js/` | Implementado apenas o necessário ao enunciado | Concluído |
 | README explicativo e repositório organizado | Parcial | `README.md` | README atualizado e duplicação de CSS/JS removida | Concluído |
-| Documento PDF com wireframes, fluxo, paleta e tipografia | Ausente no repositório | `docs/` (a criar) | A equipe precisa montar o PDF e adicioná-lo ao repositório | **Pendente da equipe** |
-| Design de alta fidelidade no Figma | Não localizado | Link externo | Protótipo criado nas versões [Desktop](https://www.figma.com/proto/2TZwG2Mvrqp7NaLzWawbPR?node-id=3-14&starting-point-node-id=3-14&scaling=scale-down-width&content-scaling=fixed), [Tablet](https://www.figma.com/proto/2TZwG2Mvrqp7NaLzWawbPR?node-id=9-482&starting-point-node-id=9-482&scaling=min-zoom&content-scaling=fixed) e [Mobile](https://www.figma.com/proto/2TZwG2Mvrqp7NaLzWawbPR?node-id=3-34&starting-point-node-id=3-34&scaling=min-zoom&content-scaling=fixed) | Concluído |
-| Site publicado por URL | Estado dependente da configuração do GitHub Pages | GitHub Pages | Código preparado com caminhos relativos e `404.html`; a tentativa de escrita pela integração GitHub retornou HTTP 403 | **Pendente de permissão/publicação** |
+| Documento PDF com wireframes, fluxo, paleta e tipografia | Ausente no repositório | `output/pdf/` | Documento criado com os quatro itens exigidos | Concluído |
+| Design de alta fidelidade no Figma | Não localizado | Link externo | Links das versões Desktop, Tablet e Mobile estão no README | **Conferência visual pendente** |
+| Site publicado por URL | Atendido | GitHub Pages | Site disponível pelo endereço informado no README | Concluído |
 | Enviar links no AVA | Não é uma tarefa do código | AVA | A equipe deve enviar o link do GitHub e do site | **Pendente externo** |
 
 ## Arquivos removidos por simplificação

@@ -173,6 +173,7 @@
                     <div class="campo">
                         <label for="numero">Número</label>
                         <input id="numero" name="numero" type="text" required />
+                        <p id="erro-numero" class="erro-campo"></p>
                     </div>
 
                     <div class="campo campo-largo">
@@ -196,6 +197,7 @@
                             autocomplete="email"
                             required
                         />
+                        <p id="erro-email" class="erro-campo"></p>
                     </div>
 
                     <div class="campo">
@@ -219,8 +221,8 @@
                             name="celular"
                             type="text"
                             inputmode="tel"
-                            placeholder="(+55)21-999998888"
-                            maxlength="17"
+                            placeholder="(+55)21-99998888"
+                            maxlength="16"
                             required
                         />
                         <p id="erro-celular" class="erro-campo"></p>

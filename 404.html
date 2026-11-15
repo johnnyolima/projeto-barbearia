@@ -3,6 +3,12 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <base id="base-projeto" href="/" />
+        <script>
+            if (window.location.hostname.endsWith('github.io')) {
+                document.getElementById('base-projeto').href = '/projeto-barbearia/';
+            }
+        </script>
         <title>Navalha de Ouro | Página não encontrada</title>
         <link rel="stylesheet" href="css/estilo.css" />
         <link rel="stylesheet" href="css/menu-hamburguer.css" />
@@ -32,17 +38,7 @@
             <nav class="menu" aria-label="Navegação principal">
                 <a href="index.html">Início</a>
                 <a href="cadastro.html">Cadastro</a>
-                <details class="submenu">
-                    <summary>Área do cliente</summary>
-                    <div class="submenu-lista">
-                        <a href="login.html">Entrar</a>
-                        <a href="horarios.html">Horários</a>
-                        <a href="painel.html">Painel</a>
-                        <a href="feedback.html">Feedback</a>
-                        <a href="meus-dados.html">Meus dados enviados</a>
-                        <a href="index.html">Site público</a>
-                    </div>
-                </details>
+                <a id="link-entrar" href="login.html">Entrar</a>
             </nav>
             <div class="area-usuario">
                 <a
@@ -83,7 +79,7 @@
 
         <main class="conteudo erro-pagina">
             <section>
-                <p class="erro-codigo">404</p>
+                <p id="codigo-erro" class="erro-codigo">404</p>
                 <h1 id="titulo-erro">Página não encontrada</h1>
                 <p id="texto-erro" class="introducao">
                     O endereço acessado não existe ou foi alterado.

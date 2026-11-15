@@ -1,14 +1,23 @@
 const CHAVE_USUARIO = 'navalha_usuario';
 const CHAVE_SESSAO = 'navalha_sessao';
 const CHAVE_FEEDBACK = 'navalha_feedback';
+const CHAVE_AGENDAMENTO = 'navalha_agendamento';
+
+function lerJSON(chave) {
+  try {
+    return JSON.parse(localStorage.getItem(chave));
+  } catch (erro) {
+    localStorage.removeItem(chave);
+    return null;
+  }
+}
 
 function salvarUsuario(usuario) {
   localStorage.setItem(CHAVE_USUARIO, JSON.stringify(usuario));
 }
 
 function obterUsuario() {
-  const dados = localStorage.getItem(CHAVE_USUARIO);
-  return dados ? JSON.parse(dados) : null;
+  return lerJSON(CHAVE_USUARIO);
 }
 
 function salvarSessao(sessao) {
@@ -16,8 +25,11 @@ function salvarSessao(sessao) {
 }
 
 function obterSessao() {
-  const dados = localStorage.getItem(CHAVE_SESSAO);
-  return dados ? JSON.parse(dados) : null;
+  const sessao = lerJSON(CHAVE_SESSAO);
+  const valida = sessao && typeof sessao.nome === 'string' && sessao.nome.trim()
+    && typeof sessao.login === 'string' && sessao.login.trim();
+  if (!valida) localStorage.removeItem(CHAVE_SESSAO);
+  return valida ? sessao : null;
 }
 
 function encerrarSessao() {
@@ -29,8 +41,13 @@ function salvarFeedback(feedback) {
 }
 
 function obterFeedback() {
-  const dados = localStorage.getItem(CHAVE_FEEDBACK);
-  return dados ? JSON.parse(dados) : null;
+  return lerJSON(CHAVE_FEEDBACK);
+}
+
+function prepararNovoUsuario() {
+  localStorage.removeItem(CHAVE_SESSAO);
+  localStorage.removeItem(CHAVE_FEEDBACK);
+  localStorage.removeItem(CHAVE_AGENDAMENTO);
 }
 
 function somenteNumeros(texto) {
@@ -51,7 +68,7 @@ function formatarCEP(texto) {
 }
 
 // Máscara do enunciado: (+55)XX-XXXXXXXX  (XX = DDD)
-// limite = quantos números vêm depois do hífen (8 no fixo, 9 no celular).
+// limite = quantos números vêm depois do hífen (8 nos dois campos).
 function formatarTelefone(texto, limite) {
   const numeros = somenteNumeros(texto.replace('(+55)', '')).slice(0, 2 + limite);
 

@@ -41,12 +41,16 @@ body.tema-claro {
   --cor-superficie-2: #efe8da;
   --cor-texto: #1a1714;
   --cor-texto-suave: #4d4943;
-  --cor-destaque: #ffac05;
+  --cor-destaque: #805400;
   --cor-destaque-hover: #5d3f00;
   --cor-borda: #b9ae9e;
   --cor-erro: #8f1d14;
   --cor-sucesso: #146c2e;
   --cor-foco: #865c00;
+}
+
+body.tema-claro .botao {
+  color: #ffffff;
 }
 
 /* Ajustes de cores específicos do agendamento no tema claro. */
@@ -56,7 +60,7 @@ body.pagina-horarios.tema-claro {
   --cor-superficie-2: #f2e7d8;
   --cor-texto: #201b18;
   --cor-texto-suave: #524a43;
-  --cor-destaque: #d08a1e;
+  --cor-destaque: #795000;
   --cor-borda: #d9c2a4;
 }
 
@@ -427,6 +431,10 @@ body.tema-claro .hero h1 {
   background: rgba(17, 16, 15, 0.48);
 }
 
+body.tema-claro .hero .etiqueta {
+  color: #ffe099;
+}
+
 body.tema-claro .hero .botao {
   color: #e9e1da;
   background: rgba(168, 89, 10, 0.48);
@@ -475,6 +483,7 @@ h3 {
 }
 
 .card {
+  min-width: 0;
   padding: 22px;
   border: 1px solid var(--cor-borda);
   border-radius: 8px;
@@ -486,6 +495,10 @@ h3 {
 .preco {
   color: var(--cor-destaque);
   text-align: center;
+}
+
+.card h3 {
+  font-size: 1.17em;
 }
 .card p,
 .card a {
@@ -508,7 +521,7 @@ h3 {
   font-weight: 700;
   text-decoration: none;
   cursor: pointer;
-  height: 53px;
+  min-height: 53px;
 }
 
 .botao:hover {
@@ -540,6 +553,13 @@ h3 {
   display: grid;
   grid-template-columns: 1fr;
   gap: 15px;
+}
+
+.grade-formulario > *,
+.campo,
+.campo-com-acao,
+.campo-com-acao input {
+  min-width: 0;
 }
 
 .campo label,
@@ -741,6 +761,32 @@ footer {
 @media (max-width: 700px) {
   .container_campo {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .conteudo {
+    padding-inline: 5%;
+  }
+
+  .formulario {
+    padding: 20px;
+  }
+
+  .formulario-horarios {
+    padding-inline: 20px;
+  }
+
+  .container_campo {
+    padding-inline: 0;
+  }
+
+  .dados-lista {
+    grid-template-columns: 1fr;
+  }
+
+  .dados-lista dd {
+    margin-bottom: 8px;
   }
 }
 

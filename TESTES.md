@@ -1,54 +1,24 @@
 # Testes realizados - Navalha de Ouro
 
-Data da revisão: 25/08/2026.
+Data da revisão: 15/11/2026.
 
-Este arquivo registra somente testes que foram realmente executados. Itens não testados no ambiente publicado permanecem identificados como pendentes.
+## Resultado
 
-## Testes automatizados de lógica
+- 8 arquivos JavaScript aprovados por `node --check`;
+- cadastro, máscaras e algoritmo de CPF aprovados;
+- campos inválidos e CEP não consultado impedem o cadastro;
+- login, sessão, logout e páginas restritas aprovados;
+- feedback isolado por usuário e agendamento futuro aprovados;
+- nenhum `window.alert()` ou caminho local inexistente;
+- menu móvel aprovado com mouse e teclado;
+- temas aprovados na verificação de contraste;
+- layout verificado em 375, 768, 1024 e 1440 px com fonte em 150%;
+- site publicado respondeu pelo endereço do README.
 
-Foram executados testes em Node.js com simulações de `localStorage`, DOM e resposta da ViaCEP.
+Os fluxos foram executados no Chrome com respostas simuladas da ViaCEP para testar sucesso e falha sem depender da rede.
 
-**Resultado: 17 de 17 testes aprovados.**
+## Pendências externas
 
-- CPF válido aceito;
-- CPF inválido recusado;
-- máscara de CPF;
-- máscara de CEP;
-- máscara de telefone;
-- gravação e leitura do usuário em JSON;
-- gravação e encerramento de sessão;
-- gravação e leitura de feedback;
-- preenchimento do endereço a partir da resposta da ViaCEP;
-- cadastro válido salva o usuário;
-- login correto cria sessão;
-- login incorreto exibe mensagem visual;
-- página restrita sem sessão redireciona para `404.html?tipo=auth`;
-- tema salva preferência;
-- A+ salva escala de fonte;
-- `range` atualiza o valor exibido;
-- feedback é salvo e direciona para a página de confirmação.
-
-## Verificações estáticas
-
-- 8 de 8 arquivos JavaScript aprovados por `node --check`;
-- nenhum `href` ou `src` local aponta para arquivo inexistente;
-- nenhum `window.alert()` é utilizado pelo código do projeto;
-- CSS possui abordagem mobile first e breakpoints em 768 px e 1024 px;
-- `index.html` está na raiz e todos os caminhos são relativos, adequados ao GitHub Pages em subdiretório.
-
-## API ViaCEP
-
-O endpoint público `https://viacep.com.br/ws/01001000/json/` foi consultado durante a revisão e respondeu com dados de endereço, incluindo Praça da Sé, São Paulo/SP. O código do projeto usa o mesmo padrão de URL.
-
-## PDF de estudo
-
-- PDF gerado com 49 páginas na versão anterior e revisado novamente na entrega final;
-- arquivo renderizado para inspeção de layout;
-- não há JavaScript incorporado no PDF;
-- o documento contém requisitos, estudo, divisão do grupo, roteiro, checklist, glossário e anexos de código.
-
-## Pendências que exigem ambiente externo
-
-- publicação efetiva no GitHub: tentativa de escrita pela integração retornou HTTP 403 `Resource not accessible by integration`;
-- GitHub Pages: deve ser validado depois que a versão final estiver no repositório e Pages estiver configurado para `main` + `/(root)`;
-- envio dos links no AVA: ação manual da equipe.
+- conferir o protótipo final no Figma;
+- enviar no AVA os links do repositório e do site;
+- preparar a demonstração e a explicação técnica da equipe.

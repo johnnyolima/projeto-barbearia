@@ -4,7 +4,16 @@ const campoCPF = document.getElementById('cpf');
 const campoCEP = document.getElementById('cep');
 const campoTelefone = document.getElementById('telefone');
 const campoCelular = document.getElementById('celular');
+const campoNumero = document.getElementById('numero');
+const campoEmail = document.getElementById('email');
 const mensagemCadastro = document.getElementById('mensagem-cadastro');
+let cepConsultado = '';
+let consultaCEPAtual = 0;
+
+document.querySelectorAll('.erro-campo[id]').forEach(function (erro) {
+  const campo = document.getElementById(erro.id.replace('erro-', ''));
+  if (campo) campo.setAttribute('aria-describedby', erro.id);
+});
 
 document.querySelectorAll('.botao-olho').forEach(function (botao) {
   botao.addEventListener('click', function () {
@@ -23,6 +32,10 @@ campoCPF.addEventListener('input', function () {
 
 campoCEP.addEventListener('input', function () {
   campoCEP.value = formatarCEP(campoCEP.value);
+
+  if (somenteNumeros(campoCEP.value) !== cepConsultado) {
+    limparEndereco();
+  }
 });
 
 campoTelefone.addEventListener('input', function () {
@@ -30,14 +43,25 @@ campoTelefone.addEventListener('input', function () {
 });
 
 campoCelular.addEventListener('input', function () {
-  campoCelular.value = formatarTelefone(campoCelular.value, 9);
+  campoCelular.value = formatarTelefone(campoCelular.value, 8);
 });
 
 campoCEP.addEventListener('blur', buscarEnderecoPorCEP);
 
+function limparEndereco() {
+  document.getElementById('rua').value = '';
+  document.getElementById('bairro').value = '';
+  document.getElementById('cidade').value = '';
+  document.getElementById('uf').value = '';
+  cepConsultado = '';
+}
+
 async function buscarEnderecoPorCEP() {
   const cep = somenteNumeros(campoCEP.value);
   const erroCEP = document.getElementById('erro-cep');
+  const numeroConsulta = ++consultaCEPAtual;
+
+  limparEndereco();
 
   if (cep.length !== 8) {
     erroCEP.textContent = 'Digite um CEP com 8 números.';
@@ -48,21 +72,38 @@ async function buscarEnderecoPorCEP() {
 
   try {
     const resposta = await fetch('https://viacep.com.br/ws/' + cep + '/json/');
+
+    if (!resposta.ok) {
+      throw new Error('Falha na consulta do CEP.');
+    }
+
     const endereco = await resposta.json();
 
-    if (endereco.erro) {
-      erroCEP.textContent = 'CEP não encontrado.';
-      document.getElementById('cidade').value = '';
+    if (numeroConsulta !== consultaCEPAtual || cep !== somenteNumeros(campoCEP.value)) {
       return;
     }
 
-    document.getElementById('rua').value = endereco.logradouro || '';
-    document.getElementById('bairro').value = endereco.bairro || '';
-    document.getElementById('cidade').value = endereco.localidade || '';
-    document.getElementById('uf').value = endereco.uf || '';
+    if (endereco.erro) {
+      erroCEP.textContent = 'CEP não encontrado.';
+      return;
+    }
+
+    const valores = [endereco.logradouro, endereco.bairro, endereco.localidade, endereco.uf];
+    ['rua', 'bairro', 'cidade', 'uf'].forEach(function (id, indice) {
+      document.getElementById(id).value = valores[indice] || '';
+    });
+    if (valores.some(function (valor) { return !valor; })) {
+      limparEndereco();
+      erroCEP.textContent = 'O CEP não retornou o endereço completo.';
+      return;
+    }
+    cepConsultado = cep;
     erroCEP.textContent = '';
   } catch (erro) {
-    erroCEP.textContent = 'Não foi possível consultar o CEP agora.';
+    if (numeroConsulta === consultaCEPAtual) {
+      limparEndereco();
+      erroCEP.textContent = 'Não foi possível consultar o CEP agora.';
+    }
   }
 }
 
@@ -73,6 +114,9 @@ function escreverErro(id, texto) {
 function limparErros() {
   document.querySelectorAll('.erro-campo').forEach(function (elemento) {
     elemento.textContent = '';
+  });
+  document.querySelectorAll('[aria-invalid="true"]').forEach(function (campo) {
+    campo.removeAttribute('aria-invalid');
   });
   mensagemCadastro.textContent = '';
   mensagemCadastro.className = 'mensagem oculto';
@@ -95,6 +139,7 @@ formularioCadastro.addEventListener('submit', function (evento) {
 
   function marcarErro(campo, idErro, texto) { /* envia a mensagem de erro do cadastro */ 
     escreverErro(idErro, texto);
+    campo.setAttribute('aria-invalid', 'true');
     formularioValido = false;
     if (!primeiroCampoInvalido) {
       primeiroCampoInvalido = campo;
@@ -109,8 +154,16 @@ formularioCadastro.addEventListener('submit', function (evento) {
     marcarErro(campoCPF, 'erro-cpf', 'CPF inválido. Confira os números digitados.');
   }
 
-  if (somenteNumeros(cep).length !== 8 || !document.getElementById('cidade').value) {
+  if (somenteNumeros(cep).length !== 8 || cepConsultado !== somenteNumeros(cep)) {
     marcarErro(campoCEP, 'erro-cep', 'Informe um CEP válido e aguarde o preenchimento do endereço.');
+  }
+
+  if (!campoNumero.value.trim()) {
+    marcarErro(campoNumero, 'erro-numero', 'Informe o número do endereço.');
+  }
+
+  if (!campoEmail.value.trim() || !campoEmail.checkValidity()) {
+    marcarErro(campoEmail, 'erro-email', 'Informe um e-mail válido.');
   }
 
   // Fixo: (+55)XX-XXXXXXXX (8 números depois do hífen)
@@ -118,8 +171,8 @@ formularioCadastro.addEventListener('submit', function (evento) {
     marcarErro(campoTelefone, 'erro-telefone', 'Use o formato (+55)XX-XXXXXXXX.');
   }
 
-  // Celular: mesmo formato, aceitando também o 9º dígito
-  if (!/^\(\+55\)\d{2}-\d{8,9}$/.test(celular)) {
+  // Celular: formato estrito exigido no enunciado.
+  if (!/^\(\+55\)\d{2}-\d{8}$/.test(celular)) {
     marcarErro(campoCelular, 'erro-celular', 'Use o formato (+55)XX-XXXXXXXX.');
   }
 
@@ -159,8 +212,10 @@ formularioCadastro.addEventListener('submit', function (evento) {
     senha: senha
   };
 
+  prepararNovoUsuario();
   salvarUsuario(usuario);
   formularioCadastro.reset();
+  limparEndereco();
   mensagemCadastro.textContent = 'Cadastro salvo no navegador. Agora você já pode fazer login.';
   mensagemCadastro.className = 'mensagem sucesso';
   document.getElementById('ir-login').classList.remove('oculto');

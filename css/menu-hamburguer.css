@@ -37,6 +37,11 @@
     z-index: 50;
   }
 
+  .botao-hamburguer:focus-visible {
+    outline: 3px solid var(--cor-foco);
+    outline-offset: 3px;
+  }
+
   .botao-hamburguer span {
     display: block;
 

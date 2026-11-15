@@ -6,6 +6,7 @@ Portal de divulgação e cadastro de clientes de uma barbearia, desenvolvido com
 |---|---|
 | **Site publicado** | https://johnnyolima.github.io/projeto-barbearia/ |
 | **Protótipo no Figma** | [Desktop](https://www.figma.com/proto/2TZwG2Mvrqp7NaLzWawbPR?node-id=3-14&starting-point-node-id=3-14&scaling=scale-down-width&content-scaling=fixed) · [Tablet](https://www.figma.com/proto/2TZwG2Mvrqp7NaLzWawbPR?node-id=9-482&starting-point-node-id=9-482&scaling=min-zoom&content-scaling=fixed) · [Mobile](https://www.figma.com/proto/2TZwG2Mvrqp7NaLzWawbPR?node-id=3-34&starting-point-node-id=3-34&scaling=min-zoom&content-scaling=fixed) |
+| **Pré-projeto** | [Wireframes, fluxo, paleta e tipografia](output/pdf/pre-projeto-navalha-de-ouro.pdf) |
 | **Instituição** | UNISUAM – Análise e Desenvolvimento de Sistemas |
 | **Disciplina** | Projeto de Desenvolvimento em Front-End – 2026.2 |
 | **Professor** | Bruno Cezario |
@@ -37,7 +38,7 @@ Pelo site publicado, siga este roteiro:
    - CPF: `529.982.247-25`
    - CEP: `01001-000` (rua, bairro, cidade e UF são preenchidos sozinhos)
    - Telefone fixo: `(+55)21-33334444`
-   - Celular: `(+55)21-999998888`
+   - Celular: `(+55)21-99998888`
    - Login: `barber` (6 letras)
    - Senha: `navalhas` (8 letras)
 2. Entre pela tela de **Login** com o login e a senha cadastrados.
@@ -79,7 +80,8 @@ O formulário só é salvo quando todas as regras abaixo são cumpridas. Os erro
 | Nome completo | De 15 a 80 caracteres, apenas letras |
 | CPF | Cálculo real dos dois dígitos verificadores |
 | CEP | Consulta à API ViaCEP e preenchimento automático de rua, bairro, cidade e UF |
-| Telefone fixo e celular | Máscara `(+55)XX-XXXXXXXX` (o celular aceita também o 9º dígito) |
+| Telefone fixo e celular | Máscara exata `(+55)XX-XXXXXXXX` |
+| Número e e-mail | Obrigatórios; o e-mail precisa ter formato válido |
 | Login | Exatamente 6 letras |
 | Senha | Exatamente 8 letras |
 | Confirmação | Igual à senha |
@@ -92,7 +94,7 @@ Os dados são guardados no navegador em formato JSON (`JSON.stringify` para salv
 |---|---|
 | `navalha_usuario` | Dados do cadastro |
 | `navalha_sessao` | Usuário logado (nome e login) |
-| `navalha_feedback` | Respostas do formulário de feedback |
+| `navalha_feedback` | Respostas do feedback vinculadas ao login |
 | `navalha_agendamento` | Horário agendado |
 | `navalha_tema` e `navalha_fonte` | Preferências de acessibilidade |
 
@@ -111,7 +113,7 @@ No login, o sistema compara o que foi digitado com o cadastro salvo. Enquanto ex
 |---|---|---|
 | Fundo | `#171513` | `#f7f4ee` |
 | Texto | `#f0ebf4` | `#1a1714` |
-| Destaque (dourado) | `#d7a84b` | `#ffac05` |
+| Destaque (dourado) | `#d7a84b` | `#805400` |
 
 Tipografia: **Arial**, uma fonte do sistema, de leitura fácil e carregamento rápido.
 
@@ -135,7 +137,8 @@ projeto-barbearia/
 │   ├── meus-dados.js   exibição dos dados enviados
 │   ├── horarios.js     agendamento
 │   └── inicio.js       carrossel
-└── assets/             imagens
+├── assets/             imagens
+└── output/pdf/         documento de pré-projeto
 ```
 
 ## Observação de segurança

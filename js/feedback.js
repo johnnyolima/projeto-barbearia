@@ -38,6 +38,7 @@ formularioFeedback.addEventListener('submit', function (evento) {
 
   const feedback = {
     usuario: sessao.nome,
+    login: sessao.login,
     servico: document.getElementById('servico').value,
     frequencia: frequenciaSelecionada.value,
     nota: campoNota.value,
