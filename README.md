@@ -37,8 +37,8 @@ Pelo site publicado, siga este roteiro:
    - Nome: `Joao da Silva Santos`
    - CPF: `529.982.247-25`
    - CEP: `01001-000` (rua, bairro, cidade e UF são preenchidos sozinhos)
-   - Telefone fixo: `(+55)21-33334444`
-   - Celular: `(+55)21-99998888`
+   - Telefone fixo: `(+55)21-xxxx-xxxx`
+   - Celular: `(+55)21-xxxxx-xxxx`
    - Login: `barber` (6 letras)
    - Senha: `navalhas` (8 letras)
 2. Entre pela tela de **Login** com o login e a senha cadastrados.
